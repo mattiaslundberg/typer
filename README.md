@@ -6,7 +6,8 @@ The quickest way to start hacking on a new React-ES6 project
 
 ## Install
 Simply clone the repo and run:
-`npm start`
+- `npm install`
+- `npm start`
 
 ## Is it working?
 After running `npm start` visit localhost:8080
