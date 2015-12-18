@@ -2,7 +2,7 @@
 
 ![ayee](https://carlosazaustre.es/blog/content/images/2015/06/react-es6.jpg)
 
-The quickest way to start hacking on a new React-ES6 project
+The quickest way to start hacking on a new React-ES6(and beyond) project!
 
 ## Install
 Simply clone the repo and run:
