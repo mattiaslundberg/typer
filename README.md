@@ -20,7 +20,9 @@ If everything is set up properly, you should see a welcome message on the screen
 ## You're all set!
 Start hacking away!
 
-If you're new to using React with ES6 you can use the content inside of `src/js/` as an example of how to create ES6 components!
+Most of your work will be done inside of `app/js`
+
+If you're new to using React with ES6 you can use the content inside of `app/js/` as an example of how to create ES6 components!
 
 This is a baseline for new React-ES6 projects, add whatever modules you want!
 
