@@ -3,6 +3,7 @@
   "main": "index.js",
   "description": "The quickest way to start hacking on a React-ES6 project",
   "author": "Rosel Padilla || @roselpadilla [Twitter, Github]",
+  "version": "1.0.0",
   "license": "MIT",
   "keywords": [
     "React",
@@ -12,6 +13,13 @@
     "babel",
     "eslint"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RoselPadilla/React-ES6-Boilerplate"
+  },
+  "bugs": {
+    "url": "https://github.com/RoselPadilla/React-ES6-Boilerplate/issues"
+  },
   "scripts": {
     "pre": "webpack",
     "start": "webpack-dev-server"
