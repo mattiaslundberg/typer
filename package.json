@@ -21,7 +21,7 @@
     "url": "https://github.com/RoselPadilla/React-ES6-Boilerplate/issues"
   },
   "scripts": {
-    "pre": "webpack",
+    "pre": "NODE_ENV=production webpack -vpc --config webpack.config.prod.js",
     "start": "webpack-dev-server"
   },
   "dependencies": {
