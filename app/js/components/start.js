@@ -7,7 +7,7 @@ class Start extends React.Component {
     super();
 
     this.state = {
-      author: '-@Roselpadilla [Twitter, Github]',
+      author: '-@Roselpadilla [Twitter, Github, npm]',
     };
   }
 
