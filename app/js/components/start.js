@@ -19,7 +19,7 @@ class Start extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="success">
         <h1>Thanks for downloading the React-ES6-Boilerplate!</h1>
         <p>The fact that you can see this message means you are set up properly!</p>
         <p>Best of luck on all your projects!</p>
