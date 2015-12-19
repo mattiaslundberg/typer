@@ -1,4 +1,4 @@
-var webpack = require('webpack');
+let webpack = require('webpack');
 
 module.exports = {
   context: __dirname + '/app',
@@ -10,13 +10,13 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+        'NODE_ENV': JSON.stringify('production'),
+      },
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
   ],
   module: {
