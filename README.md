@@ -23,7 +23,7 @@ Start hacking away!
 Most of your work will be done inside of `app/js`
 
 To style your components, you can make use of `app/css` which contains a single
-css file (`main.css`) that is linked to `index.html` however, you are free to
+css file (`main.css`) that is linked to `index.html` however, feel free to
 change or alter the directory structure as you see fit.
 
 If you're new to using React with ES6 you can use the content inside of `app/js/` as an example of how to create ES6 components!
