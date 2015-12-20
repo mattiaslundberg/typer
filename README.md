@@ -17,16 +17,21 @@ If everything is set up properly, you should see a welcome message on the screen
 
 ![Imgur](http://i.imgur.com/U6cC2nq.png)
 
+## Styles (css, sass, etc.)
+To style your components, you can make use of `app/style` which contains a
+single sass file.
+
+Add as many additional files as you want. Wherever you need to use those styles,
+simply import the file like you would any other module. See `app/js/index.js`to
+view an example.
+
 ## You're all set!
 Start hacking away!
 
 Most of your work will be done inside of `app/js`
 
-To style your components, you can make use of `app/css` which contains a single
-css file (`main.css`) that is linked to `index.html` however, feel free to
-change or alter the directory structure as you see fit.
-
-If you're new to using React with ES6 you can use the content inside of `app/js/` as an example of how to create ES6 components!
+If you're new to using React with ES6 you can use the content inside of
+`app/js/` as an example of how to create ES6 components!
 
 This is a baseline for new React-ES6 projects, add whatever modules you want!
 
