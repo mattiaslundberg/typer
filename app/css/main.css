@@ -2,6 +2,8 @@
 * Feel free to delete this once your up and running!
 **/
 .success {
-  text-align: center;
   border: 5px solid #ddd;
+  color: #555;
+  font-family: sans-serif;
+  text-align: center;
 }

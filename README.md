@@ -15,7 +15,7 @@ After running `npm start` visit localhost:8080
 
 If everything is set up properly, you should see a welcome message on the screen that looks like this:
 
-![Imgur](http://i.imgur.com/nI5YsBK.png)
+![Imgur](http://i.imgur.com/U6cC2nq.png)
 
 ## You're all set!
 Start hacking away!

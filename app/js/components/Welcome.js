@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-class Start extends React.Component {
+class Welcome extends React.Component {
 
   static propTypes = {
     who: React.PropTypes.string,
@@ -31,4 +31,4 @@ class Start extends React.Component {
 
 
 
-export default Start;
+export default Welcome;
