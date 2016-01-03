@@ -1,21 +1,13 @@
-'use strict';
-
 import React from 'react';
 
 class Welcome extends React.Component {
+  constructor() {
+    super();
 
-  static propTypes = {
-    who: React.PropTypes.string,
-    accounts: React.PropTypes.string,
-  };
-
-  static defaultProps = {
-    accounts: '[Twitter, Github, npm]',
+    this.state = {
+      author: '@roselpadilla',
+    };
   }
-
-  state = {
-    author: '@roselpadilla',
-  };
 
   render() {
     return (
@@ -29,6 +21,13 @@ class Welcome extends React.Component {
   }
 }
 
+Welcome.propTypes = {
+  who: React.PropTypes.string,
+  accounts: React.PropTypes.string,
+};
 
+Welcome.defaultProps = {
+  accounts: '[Twitter, Github, npm]',
+};
 
 export default Welcome;
