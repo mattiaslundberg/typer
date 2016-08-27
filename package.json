@@ -1,8 +1,8 @@
 {
-  "name": "react-es6-boilerplate",
+  "name": "typer",
   "main": "index.js",
-  "description": "The quickest way to start hacking on a React-ES6 project",
-  "author": "Rosel Padilla || @roselpadilla on: [Twitter, Github, npm]",
+  "description": "Practice your typing skills",
+  "author": "Mattias Lundberg",
   "version": "1.0.0",
   "license": "MIT",
   "keywords": [
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/RoselPadilla/React-ES6-Boilerplate"
+    "url": "https://github.com/mattiaslundberg/typer"
   },
   "bugs": {
-    "url": "https://github.com/RoselPadilla/React-ES6-Boilerplate/issues"
+    "url": "https://github.com/mattiaslundberg/typer/issues"
   },
   "scripts": {
     "pre": "NODE_ENV=production webpack -vpc --config webpack.config.prod.js",
