@@ -42,7 +42,7 @@ class Typer extends React.Component {
   render() {
     if (this.state.finished) {
       const milliseconds = this.state.finished - this.state.startedTyping
-      const seconds = milliseconds / 100
+      const seconds = milliseconds / 1000
       const minutes = seconds / 60
       const writtenChars = this.props.fullText.length
       const writtenWords = writtenChars / 5
