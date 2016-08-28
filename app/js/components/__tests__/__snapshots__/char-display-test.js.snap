@@ -1,0 +1,6 @@
+exports[`CharDisplayTest Renders with correct class 1`] = `
+<span
+  className="myclass">
+  B
+</span>
+`;
