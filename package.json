@@ -21,7 +21,7 @@
     "url": "https://github.com/mattiaslundberg/typer/issues"
   },
   "scripts": {
-    "pre": "NODE_ENV=production webpack -vpc --config webpack.config.prod.js",
+    "pre": "webpack -vpc --config webpack.config.js",
     "start": "webpack-dev-server"
   },
   "dependencies": {
