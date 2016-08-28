@@ -30,7 +30,7 @@ class Typer extends React.Component {
     if (this.state.charsTyped == 0) {
       this.setState({startedTyping: new Date().getTime()})
     }
-    if (evt.target.value == this.props.fullText.join("")) {
+    if (evt.target.value == this.props.fullText.join("") && !this.state.finished) {
       this.setState({finished: new Date().getTime()})
     }
     this.setState({
