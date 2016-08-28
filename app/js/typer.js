@@ -16,6 +16,7 @@ class Typer extends React.Component {
 
   onType(evt) {
     // Ignore if following modifier is active.
+    // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/getModifierState
     if (
         evt.keyCode == 16 ||
         evt.getModifierState("Fn") ||
@@ -25,6 +26,13 @@ class Typer extends React.Component {
         evt.getModifierState("Win") /* hack for IE */) {
       return;
     }
+
+    if (this.state.charsTyped == 0) {
+      this.setState({startedTyping: new Date().getTime()})
+    }
+    if (evt.target.value == this.props.fullText.join("")) {
+      this.setState({finished: new Date().getTime()})
+    }
     this.setState({
       typedSequence: evt.target.value,
       charsTyped: this.state.charsTyped + 1
@@ -32,9 +40,31 @@ class Typer extends React.Component {
   }
 
   render() {
+    if (this.state.finished) {
+      const milliseconds = this.state.finished - this.state.startedTyping
+      const seconds = milliseconds / 100
+      const minutes = seconds / 60
+      const writtenChars = this.props.fullText.length
+      const writtenWords = writtenChars / 5
+      const charsperm = writtenChars / minutes
+      const wordsperm = writtenWords / minutes
+
+      return (
+        <div className="typer">
+          <div>
+            <div>Time: {seconds}s</div>
+            <div>Chars/m: {charsperm}</div>
+            <div>Words/m: {wordsperm}</div>
+          </div>
+        </div>
+      )
+    }
     return (
       <div className="typer">
-        <StatusDisplay typedSequence={this.state.typedSequence} fullText={this.props.fullText} />
+        <StatusDisplay
+          typedSequence={this.state.typedSequence}
+          fullText={this.props.fullText}
+          startTime={this.state.startedTyping} />
         <Input onType={this.onType} />
       </div>
     )
