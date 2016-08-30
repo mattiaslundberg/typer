@@ -1,0 +1,71 @@
+exports[`TyperTest Renders initial text 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "children": Array [
+      Object {
+        "$$typeof": Symbol(react.element),
+        "_owner": null,
+        "_store": Object {},
+        "key": null,
+        "props": Object {
+          "fullText": Array [
+            "h",
+            "e",
+            "l",
+            "l",
+            "o"
+          ],
+          "startTime": undefined,
+          "typedSequence": ""
+        },
+        "ref": null,
+        "type": [Function StatusDisplay]
+      },
+      Object {
+        "$$typeof": Symbol(react.element),
+        "_owner": null,
+        "_store": Object {},
+        "key": null,
+        "props": Object {
+          "onType": [Function bound onType]
+        },
+        "ref": null,
+        "type": [Function Input]
+      }
+    ],
+    "className": "typer"
+  },
+  "ref": null,
+  "type": "div"
+}
+`;
+
+exports[`TyperTest Renders result 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "children": Object {
+      "$$typeof": Symbol(react.element),
+      "_owner": null,
+      "_store": Object {},
+      "key": null,
+      "props": Object {
+        "textLength": 5,
+        "time": 200
+      },
+      "ref": null,
+      "type": [Function ResultDisplay]
+    },
+    "className": "typer"
+  },
+  "ref": null,
+  "type": "div"
+}
+`;
