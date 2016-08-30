@@ -1,6 +1,7 @@
 import React from 'react'
 import Input from './components/input'
 import StatusDisplay from './components/status-display'
+import ResultDisplay from './components/result-display'
 
 class Typer extends React.Component {
   constructor(props) {
@@ -42,20 +43,11 @@ class Typer extends React.Component {
   render() {
     if (this.state.finished) {
       const milliseconds = this.state.finished - this.state.startedTyping
-      const seconds = milliseconds / 1000
-      const minutes = seconds / 60
       const writtenChars = this.props.fullText.length
-      const writtenWords = writtenChars / 5
-      const charsperm = writtenChars / minutes
-      const wordsperm = writtenWords / minutes
 
       return (
         <div className="typer">
-          <div>
-            <div>Time: {seconds}s</div>
-            <div>Chars/m: {charsperm}</div>
-            <div>Words/m: {wordsperm}</div>
-          </div>
+          <ResultDisplay time={milliseconds} textLength={writtenChars} />
         </div>
       )
     }

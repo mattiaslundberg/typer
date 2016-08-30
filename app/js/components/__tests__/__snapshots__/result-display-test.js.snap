@@ -1,0 +1,17 @@
+exports[`ResultDisplayTest WPM calculation is correct 1`] = `
+<div>
+  <div>
+    Time: 
+    0.01
+    s
+  </div>
+  <div>
+    Chars/m: 
+    300000
+  </div>
+  <div>
+    Words/m: 
+    60000
+  </div>
+</div>
+`;
