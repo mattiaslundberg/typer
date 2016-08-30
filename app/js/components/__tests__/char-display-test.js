@@ -8,6 +8,6 @@ describe('CharDisplayTest', () => {
       <CharDisplay cssClass="myclass" char="B" />
     );
 
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(component.toJSON()).toMatchSnapshot()
   })
 })

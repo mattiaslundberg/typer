@@ -1,0 +1,38 @@
+exports[`StatusDisplayTest Render invalid chars 1`] = `
+<div>
+  <span
+    className="invalid-typed">
+    a
+  </span>
+  <span
+    className="invalid-typed">
+    b
+  </span>
+</div>
+`;
+
+exports[`StatusDisplayTest Render not-typed chars 1`] = `
+<div>
+  <span
+    className="not-typed">
+    a
+  </span>
+  <span
+    className="not-typed">
+    b
+  </span>
+</div>
+`;
+
+exports[`StatusDisplayTest Render valid chars 1`] = `
+<div>
+  <span
+    className="typed">
+    a
+  </span>
+  <span
+    className="typed">
+    b
+  </span>
+</div>
+`;
