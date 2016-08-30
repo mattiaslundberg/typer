@@ -1,0 +1,26 @@
+exports[`AppTest Renders Typer with text 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "fullText": Array [
+      "H",
+      "e",
+      "l",
+      "l",
+      "o",
+      " ",
+      "w",
+      "o",
+      "r",
+      "l",
+      "d",
+      "!"
+    ]
+  },
+  "ref": null,
+  "type": [Function Typer]
+}
+`;
