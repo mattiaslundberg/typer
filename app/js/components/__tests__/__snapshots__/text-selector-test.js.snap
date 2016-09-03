@@ -1,0 +1,53 @@
+exports[`TextSelectorTest Render selectable items 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "children": Array [
+      Object {
+        "$$typeof": Symbol(react.element),
+        "_owner": null,
+        "_store": Object {},
+        "key": null,
+        "props": Object {
+          "children": "Select text",
+          "value": ""
+        },
+        "ref": null,
+        "type": "option"
+      },
+      Array [
+        Object {
+          "$$typeof": Symbol(react.element),
+          "_owner": null,
+          "_store": Object {},
+          "key": null,
+          "props": Object {
+            "children": "hello world",
+            "value": "Hello world!"
+          },
+          "ref": null,
+          "type": "option"
+        },
+        Object {
+          "$$typeof": Symbol(react.element),
+          "_owner": null,
+          "_store": Object {},
+          "key": null,
+          "props": Object {
+            "children": "python-print",
+            "value": "print(\'some test\')"
+          },
+          "ref": null,
+          "type": "option"
+        }
+      ]
+    ],
+    "onChange": [Function bound onChange]
+  },
+  "ref": null,
+  "type": "select"
+}
+`;

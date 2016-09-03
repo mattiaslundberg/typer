@@ -1,5 +1,10 @@
 import React from 'react'
 
+const options = [
+  {value: "Hello world!", name: "hello world"},
+  {value: "print('some test')", name: "python-print"},
+]
+
 class TextSelector extends React.Component {
   constructor() {
     super()
@@ -13,12 +18,17 @@ class TextSelector extends React.Component {
     }
   }
 
+  getOptions() {
+    return options.map((o) => {
+      return <option value={o.value}>{o.name}</option>
+    })
+  }
 
   render() {
     return (
       <select onChange={this.onChange}>
         <option value="">Select text</option>
-        <option value="Hello world!">hello</option>
+        {this.getOptions()}
       </select>
     )
   }
