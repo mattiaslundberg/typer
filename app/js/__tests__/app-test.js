@@ -9,7 +9,15 @@ describe('AppTest', () => {
     )
   }
 
-  it('Renders Typer with text', () => {
+  it('Renders Typer after text is set', () => {
+    let tree = render()
+    let instance = tree.getMountedInstance()
+    instance.setState({text: "Hello world!"})
+
+    expect(tree.getRenderOutput()).toMatchSnapshot()
+  })
+
+  it('Renders TextSelector', () => {
     let tree = render()
 
     expect(tree.getRenderOutput()).toMatchSnapshot()

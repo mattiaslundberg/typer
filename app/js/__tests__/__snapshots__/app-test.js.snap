@@ -1,4 +1,18 @@
-exports[`AppTest Renders Typer with text 1`] = `
+exports[`AppTest Renders TextSelector 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "onSelect": [Function bound onTextSelected]
+  },
+  "ref": null,
+  "type": [Function TextSelector]
+}
+`;
+
+exports[`AppTest Renders Typer after text is set 1`] = `
 Object {
   "$$typeof": Symbol(react.element),
   "_owner": null,

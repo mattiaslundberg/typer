@@ -1,11 +1,31 @@
 import React from 'react'
 import Typer from './typer.js'
+import TextSelector from './components/text-selector.js'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      text: null,
+    }
+
+    this.onTextSelected = this.onTextSelected.bind(this)
+  }
+
+  onTextSelected(text) {
+    this.setState({text: text})
+  }
+
+
   render() {
-    const text = "Hello world!".split("")
+    if (this.state.text) {
+      return (
+        <Typer fullText={this.state.text.split("")} />
+      )
+    }
+
     return (
-      <Typer fullText={text} />
+      <TextSelector onSelect={this.onTextSelected} />
     )
   }
 }
