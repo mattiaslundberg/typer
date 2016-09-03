@@ -1,9 +1,17 @@
 import React from 'react'
-import textSelector from '../text-selector'
-import renderer from 'react-test-renderer'
+import TextSelector from '../text-selector'
+import sd from 'skin-deep'
 
 describe("TextSelectorTest", () => {
-  it('Triggers callback', () => {
+  const render = (cb=jest.genMockFn()) => {
+    return sd.shallowRender(
+      <TextSelector onSelect={cb} />
+    )
+  }
 
+  it('Render selectable items', () => {
+    let tree = render()
+
+    expect(tree.getRenderOutput()).toMatchSnapshot()
   })
 })
