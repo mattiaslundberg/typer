@@ -1,71 +1,34 @@
 exports[`TyperTest Renders initial text 1`] = `
-Object {
-  "$$typeof": Symbol(react.element),
-  "_owner": null,
-  "_store": Object {},
-  "key": null,
-  "props": Object {
-    "children": Array [
-      Object {
-        "$$typeof": Symbol(react.element),
-        "_owner": null,
-        "_store": Object {},
-        "key": null,
-        "props": Object {
-          "fullText": Array [
-            "h",
-            "e",
-            "l",
-            "l",
-            "o"
-          ],
-          "startTime": undefined,
-          "typedSequence": ""
-        },
-        "ref": null,
-        "type": [Function StatusDisplay]
-      },
-      Object {
-        "$$typeof": Symbol(react.element),
-        "_owner": null,
-        "_store": Object {},
-        "key": null,
-        "props": Object {
-          "onType": [Function bound onType]
-        },
-        "ref": null,
-        "type": [Function Input]
-      }
-    ],
-    "className": "typer"
-  },
-  "ref": null,
-  "type": "div"
-}
+<div
+  className="typer">
+  <function StatusDisplay(props) {/* istanbul ignore next */_classCallCheck(this, StatusDisplay);return _possibleConstructorReturn(this, (StatusDisplay.__proto__ || Object.getPrototypeOf(StatusDisplay)).call(this,
+      props));
+    }
+    fullText={
+      Array [
+        "h",
+        "e",
+        "l",
+        "l",
+        "o"
+      ]
+    }
+    startTime={undefined}
+    typedSequence="" />
+  <function Input() {/* istanbul ignore next */_classCallCheck(this, Input);return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this));
+  
+    }
+    onType={[Function bound onType]} />
+</div>
 `;
 
 exports[`TyperTest Renders result 1`] = `
-Object {
-  "$$typeof": Symbol(react.element),
-  "_owner": null,
-  "_store": Object {},
-  "key": null,
-  "props": Object {
-    "children": Object {
-      "$$typeof": Symbol(react.element),
-      "_owner": null,
-      "_store": Object {},
-      "key": null,
-      "props": Object {
-        "textLength": 5,
-        "time": 200
-      },
-      "ref": null,
-      "type": [Function ResultDisplay]
-    },
-    "className": "typer"
-  },
-  "ref": null,
-  "type": "div"
-}
+<div
+  className="typer">
+  <function ResultDisplay() {/* istanbul ignore next */_classCallCheck(this, ResultDisplay);return _possibleConstructorReturn(this, (ResultDisplay.__proto__ || Object.getPrototypeOf(ResultDisplay)).call(this));
+  
+    }
+    textLength={5}
+    time={200} />
+</div>
 `;

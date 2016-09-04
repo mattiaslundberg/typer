@@ -1,25 +1,25 @@
 exports[`AppTest Renders TextSelector 1`] = `
-Object {
-  "$$typeof": Symbol(react.element),
-  "_owner": null,
-  "_store": Object {},
-  "key": null,
-  "props": Object {
-    "onSelect": [Function bound onTextSelected]
-  },
-  "ref": null,
-  "type": [Function TextSelector]
-}
+<function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
+
+
+    /* istanbul ignore next */_this.onChange = /* istanbul ignore next */_this.onChange.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
+  }
+  onSelect={[Function bound onTextSelected]} />
 `;
 
 exports[`AppTest Renders Typer after text is set 1`] = `
-Object {
-  "$$typeof": Symbol(react.element),
-  "_owner": null,
-  "_store": Object {},
-  "key": null,
-  "props": Object {
-    "fullText": Array [
+<function Typer(props) {/* istanbul ignore next */_classCallCheck(this, Typer);var _this = _possibleConstructorReturn(this, (Typer.__proto__ || Object.getPrototypeOf(Typer)).call(this,
+    props));
+
+    /* istanbul ignore next */_this.state = {
+      typedSequence: "",
+      charsTyped: 0 };
+
+
+    /* istanbul ignore next */_this.onType = /* istanbul ignore next */_this.onType.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
+  }
+  fullText={
+    Array [
       "H",
       "e",
       "l",
@@ -33,8 +33,5 @@ Object {
       "d",
       "!"
     ]
-  },
-  "ref": null,
-  "type": [Function Typer]
-}
+  } />
 `;
