@@ -15,9 +15,7 @@ exports[`TyperTest Renders initial text 1`] = `
     }
     startTime={undefined}
     typedSequence="" />
-  <function Input() {/* istanbul ignore next */_classCallCheck(this, Input);return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this));
-  
-    }
+  <function Input() {_classCallCheck(this, Input);return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).apply(this, arguments));}
     onType={[Function bound onType]} />
 </div>
 `;
