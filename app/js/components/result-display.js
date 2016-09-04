@@ -15,9 +15,9 @@ class ResultDisplay extends React.Component {
     const wordsperm = writtenWords / minutes
     return (
       <div>
-        <div>Time: {seconds}s</div>
-        <div>Chars/m: {charsperm}</div>
-        <div>Words/m: {wordsperm}</div>
+        <div>Time: {seconds.toFixed()}s</div>
+        <div>Chars/m: {charsperm.toFixed()}</div>
+        <div>Words/m: {wordsperm.toFixed()}</div>
       </div>
     )
   }
