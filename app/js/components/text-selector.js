@@ -20,7 +20,7 @@ class TextSelector extends React.Component {
 
   getOptions() {
     return options.map((o) => {
-      return <option value={o.value}>{o.name}</option>
+      return <option key={o.value} value={o.value}>{o.name}</option>
     })
   }
 
