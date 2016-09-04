@@ -14,4 +14,18 @@ describe("TextSelectorTest", () => {
 
     expect(tree.getRenderOutput()).toMatchSnapshot()
   })
+
+  it('Triggers callback event', () => {
+    let tree = render()
+    let instance = tree.getMountedInstance()
+
+    let evt = {
+      target: {
+        value: "/test",
+      },
+    }
+
+    // TODO: Figure out how to test with mocked request.
+    //instance.onChange(evt)
+  })
 })

@@ -1,8 +1,9 @@
 import React from 'react'
+import request from '../utils/net.js'
 
 const options = [
-  {value: "Hello world!", name: "hello world"},
-  {value: "print('some test')", name: "python-print"},
+  {value: "/static/texts/loremipsum.txt", name: "Lorem Ipsum"},
+  {value: "/static/texts/hellopython.txt", name: "Hello Python"},
 ]
 
 class TextSelector extends React.Component {
@@ -14,7 +15,9 @@ class TextSelector extends React.Component {
 
   onChange(evt) {
     if (evt.target.value) {
-      this.props.onSelect(evt.target.value)
+      request(evt.target.value, (response) => {
+        this.props.onSelect(response)
+      })
     }
   }
 
