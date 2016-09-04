@@ -11,14 +11,29 @@ class TextSelector extends React.Component {
     super()
 
     this.onChange = this.onChange.bind(this)
+    this.prepareText = this.prepareText.bind(this)
   }
 
   onChange(evt) {
     if (evt.target.value) {
       request(evt.target.value, (response) => {
-        this.props.onSelect(response)
+        this.props.onSelect(this.prepareText(response))
       })
     }
+  }
+
+  prepareText(text) {
+    let words = text.replace(/\s/i, " ").split(" ")
+    let selected = this.getRandom(20, words)
+    return selected.join(" ")
+  }
+
+  getRandom(num, choices) {
+    let result = []
+    for (var i = 0; i < num; ++i) {
+      result.push(choices[Math.round(Math.random() * choices.length)])
+    }
+    return result
   }
 
   getOptions() {
