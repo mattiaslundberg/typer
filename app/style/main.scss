@@ -4,23 +4,30 @@ h1 {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    height: 60px;
-    width: 200px;
-    left: calc(50% - 100px);
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 200px;
+  left: calc(50% - 100px);
 }
 
 // App
+textarea {
+  height: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
 .typed {
-    color: lightgreen;
+  color: lightgreen;
 }
 
 .not-typed {
-    color: black;
+  color: black;
 }
 
 .invalid-typed {
-    color: red;
-    text-decoration: underline;
+  color: red;
+  text-decoration: underline;
 }
