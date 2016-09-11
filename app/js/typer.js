@@ -16,15 +16,15 @@ class Typer extends React.Component {
   }
 
   onType(evt) {
-    // Ignore if following modifier is active.
-    // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/getModifierState
     if (
         evt.keyCode == 16 ||
+        evt.keyCode == 9 ||
         evt.getModifierState("Fn") ||
         evt.getModifierState("Hyper") ||
         evt.getModifierState("OS") ||
         evt.getModifierState("Super") ||
-        evt.getModifierState("Win") /* hack for IE */) {
+        evt.getModifierState("Win")) {
+      evt.preventDefault()
       return;
     }
 
