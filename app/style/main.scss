@@ -1,6 +1,9 @@
 // Layout
+body {
+  font-family: monospace;
+}
 h1 {
-
+  font-family: sans-serif;
 }
 
 .footer {
@@ -19,15 +22,19 @@ textarea {
   outline: 0;
 }
 
-.typed {
-  color: lightgreen;
-}
+.typer {
+  font-size: 1.5em;
 
-.not-typed {
-  color: black;
-}
+  .typed {
+    color: lightgreen;
+  }
 
-.invalid-typed {
-  color: red;
-  text-decoration: underline;
+  .not-typed {
+    color: black;
+  }
+
+  .invalid-typed {
+    color: red;
+    border-bottom: solid red 1px;
+  }
 }
