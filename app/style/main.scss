@@ -3,7 +3,7 @@ body {
   font-family: monospace;
 
   background: #ccc;
-  background: linear-gradient(-45deg, #fff, #999) no-repeat center center fixed;
+  background: linear-gradient(-45deg, #fff, #ccc) no-repeat center center fixed;
 }
 
 h1 {
@@ -30,7 +30,7 @@ textarea {
   font-size: 1.5em;
 
   .typed {
-    color: lightgreen;
+    color: #01df01;
   }
 
   .not-typed {
