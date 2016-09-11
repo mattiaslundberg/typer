@@ -1,7 +1,11 @@
 // Layout
 body {
   font-family: monospace;
+
+  background: #ccc;
+  background: linear-gradient(-45deg, #fff, #999) no-repeat center center fixed;
 }
+
 h1 {
   font-family: sans-serif;
 }
