@@ -28,4 +28,12 @@ describe("TextSelectorTest", () => {
     // TODO: Figure out how to test with mocked request.
     //instance.onChange(evt)
   })
+
+  it('Correctly removes duplicate spaces', () => {
+    let tree = render()
+    let instance = tree.getMountedInstance()
+
+    let result = instance.prepareText("abc \t\n\n\t  bc  ")
+    expect(result.match(/\s{2,}/)).toBe(null)
+  })
 })

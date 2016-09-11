@@ -23,15 +23,17 @@ class TextSelector extends React.Component {
   }
 
   prepareText(text) {
-    let words = text.replace(/\s/, " ").replace(/\s+/g, " ").split(" ")
-    let selected = this.getRandom(20, words)
+    let i = 10
+    while (i-- && text.match(/\s{2,}/g))
+      text = text.replace(/[^\x20-\x7E]/g, " ").replace(/\s+/g, " ").trim()
+    let selected = this.getRandom(20, text.split(" "))
     return selected.join(" ")
   }
 
   getRandom(num, choices) {
     let result = []
     for (var i = 0; i < num; ++i) {
-      result.push(choices[Math.round(Math.random() * choices.length)])
+      result.push(choices[Math.floor(Math.random() * choices.length)])
     }
     return result
   }
