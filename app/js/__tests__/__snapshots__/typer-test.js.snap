@@ -15,7 +15,11 @@ exports[`TyperTest Renders initial text 1`] = `
     }
     startTime={undefined}
     typedSequence="" />
-  <function Input() {_classCallCheck(this, Input);return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).apply(this, arguments));}
+  <function Input(props) {/* istanbul ignore next */_classCallCheck(this, Input);var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this,
+      props));
+      /* istanbul ignore next */_this.forceFocus = /* istanbul ignore next */_this.forceFocus.bind( /* istanbul ignore next */_this);
+      /* istanbul ignore next */_this.forceFocus(); /* istanbul ignore next */return _this;
+    }
     onType={[Function bound onType]} />
 </div>
 `;
