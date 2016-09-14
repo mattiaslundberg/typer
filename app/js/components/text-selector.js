@@ -1,11 +1,6 @@
 import React from 'react'
 import request from '../utils/net.js'
 
-const options = [
-  {value: "/static/texts/loremipsum.txt", name: "Lorem Ipsum"},
-  {value: "/static/texts/hellopython.txt", name: "Hello Python"},
-]
-
 class TextSelector extends React.Component {
   constructor() {
     super()
@@ -39,7 +34,7 @@ class TextSelector extends React.Component {
   }
 
   getOptions() {
-    return options.map((o) => {
+    return this.props.options.map((o) => {
       return <option key={o.value} value={o.value}>{o.name}</option>
     })
   }

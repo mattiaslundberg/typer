@@ -5,12 +5,13 @@ import sd from 'skin-deep'
 describe("TextSelectorTest", () => {
   const render = (cb=jest.genMockFn()) => {
     return sd.shallowRender(
-      <TextSelector onSelect={cb} />
+      <TextSelector onSelect={cb} options={[{"value": "one", "name": "One"}]}/>
     )
   }
 
   it('Render selectable items', () => {
     let tree = render()
+    let instance = tree.getMountedInstance()
 
     expect(tree.getRenderOutput()).toMatchSnapshot()
   })

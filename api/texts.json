@@ -1,0 +1,5 @@
+[
+  {"value": "/api/loremipsum.txt", "name": "Lorem Ipsum"},
+  {"value": "/api/hellopython.txt", "name": "Hello Python"}
+]
+

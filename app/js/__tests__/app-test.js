@@ -1,4 +1,6 @@
 import React from 'react'
+
+jest.mock('../utils/net')
 import App from '../app'
 import sd from 'skin-deep'
 
@@ -20,6 +22,10 @@ describe('AppTest', () => {
   it('Renders TextSelector', () => {
     let tree = render()
 
+    expect(tree.getRenderOutput()).toMatchSnapshot()
+
+    let instance = tree.getMountedInstance()
+    instance.setState({options: [{"value": "one", "name": "one"}]})
     expect(tree.getRenderOutput()).toMatchSnapshot()
   })
 })

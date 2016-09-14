@@ -6,12 +6,8 @@ exports[`TextSelectorTest Render selectable items 1`] = `
     Select text
   </option>
   <option
-    value="/static/texts/loremipsum.txt">
-    Lorem Ipsum
-  </option>
-  <option
-    value="/static/texts/hellopython.txt">
-    Hello Python
+    value="one">
+    One
   </option>
 </select>
 `;
