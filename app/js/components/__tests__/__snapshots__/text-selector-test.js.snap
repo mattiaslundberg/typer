@@ -6,7 +6,7 @@ exports[`TextSelectorTest Render selectable items 1`] = `
     Select text
   </option>
   <option
-    value="one">
+    value="some full text">
     One
   </option>
 </select>

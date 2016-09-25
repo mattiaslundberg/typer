@@ -1,5 +1,4 @@
 import React from 'react'
-import request from '../utils/net.js'
 
 class TextSelector extends React.Component {
   constructor() {
@@ -11,9 +10,7 @@ class TextSelector extends React.Component {
 
   onChange(evt) {
     if (evt.target.value) {
-      request(evt.target.value, (response) => {
-        this.props.onSelect(this.prepareText(response))
-      })
+      this.props.onSelect(this.prepareText(evt.target.value))
     }
   }
 
@@ -35,7 +32,7 @@ class TextSelector extends React.Component {
 
   getOptions() {
     return this.props.options.map((o) => {
-      return <option key={o.value} value={o.value}>{o.name}</option>
+      return <option key={o.name} value={o.fulltext}>{o.name}</option>
     })
   }
 

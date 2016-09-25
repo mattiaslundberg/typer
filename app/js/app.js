@@ -13,8 +13,8 @@ class App extends React.Component {
 
     this.onTextSelected = this.onTextSelected.bind(this)
 
-    request("/api/texts.json", (response) => {
-      this.setState({options: JSON.parse(response)})
+    request("/api/texts/", (response) => {
+      this.setState({options: JSON.parse(response)._items})
     })
   }
 
