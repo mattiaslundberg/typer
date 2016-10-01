@@ -42,9 +42,19 @@
       delegate_to: 127.0.0.1
       become: no
 
-    - name: Deploy application code
+    - name: Deploy html
       copy:
-        src: ../
+        src: ../index.html
+        dest: /var/www/{{ domain_name }}/
+
+    - name: Deploy js bundle
+      copy:
+        src: ../dist/bundle.js
+        dest: /var/www/{{ domain_name }}/
+
+    - name: Deploy eve application
+      copy:
+        src: ../server/
         dest: /var/www/{{ domain_name }}/
 
     - name: Install python requirements
