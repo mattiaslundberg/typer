@@ -90,8 +90,11 @@
 
     - name: Install nginx site for specified site
       template:
-        src: templates/nginx-le.j2
-        dest: /etc/nginx/sites-enabled/le
+        src: templates/nginx-app.j2
+        dest: /etc/nginx/sites-enabled/app
+
+    - name: Old le site not present
+      file: path=/etc/nginx/sites-enabled/le state=absent
 
     - name: Reload nginx to activate specified site
       service: name=nginx state=restarted
