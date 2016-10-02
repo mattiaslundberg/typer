@@ -48,5 +48,14 @@ describe("TextSelectorTest", () => {
 
       expect(tree.getRenderOutput().props.children).toMatchSnapshot()
     })
+
+    it('Returns to select view after cancel', () => {
+      let tree = render()
+      let instance = tree.getMountedInstance()
+      instance.onAddClick()
+      instance.onNewCancel()
+
+      expect(tree.getRenderOutput().props.children).toMatchSnapshot()
+    })
   })
 })
