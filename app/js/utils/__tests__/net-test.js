@@ -8,11 +8,11 @@ function createXHRmock() {
   open = jest.fn()
   send = jest.fn()
 
-  const xhrMockClass = function () {
+  const xhrMockClass = () => {
     return {
-        setRequestHeader,
-        open,
-        send
+      setRequestHeader,
+      open,
+      send
     }
   }
 
