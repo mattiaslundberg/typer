@@ -17,17 +17,19 @@ describe("TextSelectorTest", () => {
   })
 
   it('Triggers callback event', () => {
-    let tree = render()
+    let cb = jest.fn()
+    let tree = render(cb)
     let instance = tree.getMountedInstance()
 
     let evt = {
       target: {
-        value: "/test",
+        value: "test",
       },
     }
 
-    // TODO: Figure out how to test with mocked request.
-    //instance.onChange(evt)
+    instance.onChange(evt)
+    expect(cb).toBeCalled()
+    expect(cb.mock.calls[0][0].indexOf("test")).not.toBe(-1)
   })
 
   it('Correctly removes duplicate spaces', () => {
