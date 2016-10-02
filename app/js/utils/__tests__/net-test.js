@@ -31,7 +31,9 @@ describe('Net.request', () => {
 
   it('Makes correct post request', () => {
     let done = jest.fn()
-    request("http://test.com/test", done, "POST")
+    let data = "some data"
+    request("http://test.com/test", done, "POST", data)
     expect(open).toBeCalledWith("POST", "http://test.com/test")
+    expect(send).toBeCalledWith(data)
   })
 })

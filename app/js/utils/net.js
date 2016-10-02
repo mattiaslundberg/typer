@@ -1,4 +1,4 @@
-export default function request(url, onDone, method="GET") {
+export default function request(url, onDone, method="GET", data=null) {
   let request = new XMLHttpRequest()
   request.onreadystatechange = () => {
     if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
@@ -6,5 +6,5 @@ export default function request(url, onDone, method="GET") {
     }
   }
   request.open(method, url)
-  request.send()
+  request.send(data)
 }
