@@ -1,7 +1,8 @@
 export default function request(url, onDone, method="GET", data=null) {
   let request = new XMLHttpRequest()
   request.onreadystatechange = () => {
-    if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+    if (request.readyState == XMLHttpRequest.DONE && request.status >= 200 &&
+      request.status < 300) {
       onDone(request.responseText)
     }
   }

@@ -1,5 +1,5 @@
 import React from 'react'
-import request from '../utils/net.js'
+import TextUploader from '../components/text-uploader'
 
 export default class TextSelector extends React.Component {
   constructor() {
@@ -12,7 +12,6 @@ export default class TextSelector extends React.Component {
     this.onChange = this.onChange.bind(this)
     this.prepareText = this.prepareText.bind(this)
     this.onAddClick = this.onAddClick.bind(this)
-    this.onNewSubmit = this.onNewSubmit.bind(this)
     this.onNewCancel = this.onNewCancel.bind(this)
   }
 
@@ -28,16 +27,8 @@ export default class TextSelector extends React.Component {
 
   onNewCancel() {
     this.setState({isUploading: false})
-  }
 
-  onNewSubmit() {
-    const data = {
-      name: this._name.value,
-      fulltext: this._text.value,
-    }
-    request("/api/texts/", (response) => {
-      this.setState({isUploading: false})
-    }, "POST", JSON.stringify(data))
+    // TODO: Reload the list
   }
 
   prepareText(text) {
@@ -64,22 +55,7 @@ export default class TextSelector extends React.Component {
 
   render() {
     if (this.state.isUploading) {
-      return (
-        <div>
-          <p>
-            <label htmlFor="name">Name</label>
-            <input ref={(i) => this._name = i} type="text" name="name"></input>
-          </p>
-          <p>
-            <label htmlFor="text">Text</label>
-            <input ref={(i) => this._text = i} type="text" name="text"></input>
-          </p>
-          <p>
-            <button onClick={this.onNewSubmit}>Save</button>
-            <button onClick={this.onNewCancel}>Cancel</button>
-          </p>
-        </div>
-      )
+      return <TextUploader onUpload={this.onNewCancel} />
     }
 
     return (

@@ -9,7 +9,6 @@ exports[`AppTest Renders TextSelector 1`] = `
     /* istanbul ignore next */_this.onChange = /* istanbul ignore next */_this.onChange.bind( /* istanbul ignore next */_this);
     /* istanbul ignore next */_this.prepareText = /* istanbul ignore next */_this.prepareText.bind( /* istanbul ignore next */_this);
     /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
-    /* istanbul ignore next */_this.onNewSubmit = /* istanbul ignore next */_this.onNewSubmit.bind( /* istanbul ignore next */_this);
     /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
   }
   onSelect={[Function bound onTextSelected]}
@@ -27,7 +26,6 @@ exports[`AppTest Renders TextSelector 2`] = `
     /* istanbul ignore next */_this.onChange = /* istanbul ignore next */_this.onChange.bind( /* istanbul ignore next */_this);
     /* istanbul ignore next */_this.prepareText = /* istanbul ignore next */_this.prepareText.bind( /* istanbul ignore next */_this);
     /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
-    /* istanbul ignore next */_this.onNewSubmit = /* istanbul ignore next */_this.onNewSubmit.bind( /* istanbul ignore next */_this);
     /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
   }
   onSelect={[Function bound onTextSelected]}

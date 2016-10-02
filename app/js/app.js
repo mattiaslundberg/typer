@@ -1,6 +1,6 @@
 import React from 'react'
 import Typer from './typer.js'
-import TextSelector from './components/text-selector.js'
+import TextSelector from './views/text-selector.js'
 import request from './utils/net.js'
 
 class App extends React.Component {

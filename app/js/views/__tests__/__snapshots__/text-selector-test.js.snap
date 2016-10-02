@@ -22,38 +22,7 @@ exports[`TextSelectorTest Render selectable items 1`] = `
 </div>
 `;
 
-exports[`TextSelectorTest Upload Render input form 1`] = `
-Array [
-  <p>
-    <label
-        htmlFor="name">
-        Name
-    </label>
-    <input
-        name="name"
-        type="text" />
-</p>,
-  <p>
-    <label
-        htmlFor="text">
-        Text
-    </label>
-    <input
-        name="text"
-        type="text" />
-</p>,
-  <p>
-    <button
-        onClick={[Function bound onNewSubmit]}>
-        Save
-    </button>
-    <button
-        onClick={[Function bound onNewCancel]}>
-        Cancel
-    </button>
-</p>
-]
-`;
+exports[`TextSelectorTest Upload Render input form 1`] = `undefined`;
 
 exports[`TextSelectorTest Upload Returns to select view after cancel 1`] = `
 Array [
