@@ -1,17 +1,37 @@
 import React from 'react'
 
-class TextSelector extends React.Component {
+export default class TextSelector extends React.Component {
   constructor() {
     super()
 
+    this.state = {
+      isUploading: false
+    }
+
     this.onChange = this.onChange.bind(this)
     this.prepareText = this.prepareText.bind(this)
+    this.onAddClick = this.onAddClick.bind(this)
+    this.onNewSubmit = this.onNewSubmit.bind(this)
+    this.onNewCancel = this.onNewCancel.bind(this)
   }
 
   onChange(evt) {
     if (evt.target.value) {
       this.props.onSelect(this.prepareText(evt.target.value))
     }
+  }
+
+  onAddClick() {
+    this.setState({isUploading: true})
+  }
+
+  onNewCancel() {
+    this.setState({isUploading: false})
+  }
+
+  onNewSubmit() {
+    console.warn(this._name.value, this._text.value)
+
   }
 
   prepareText(text) {
@@ -37,13 +57,37 @@ class TextSelector extends React.Component {
   }
 
   render() {
+    if (this.state.isUploading) {
+      return (
+        <div>
+          <p>
+            <label htmlFor="name">Name</label>
+            <input ref={(i) => this._name = i} type="text" name="name"></input>
+          </p>
+          <p>
+            <label htmlFor="text">Text</label>
+            <input ref={(i) => this._text = i} type="text" name="text"></input>
+          </p>
+          <p>
+            <button onClick={this.onNewSubmit}>Save</button>
+            <button onClick={this.onNewCancel}>Cancel</button>
+          </p>
+        </div>
+      )
+    }
+
     return (
-      <select onChange={this.onChange}>
-        <option value="">Select text</option>
-        {this.getOptions()}
-      </select>
+      <div>
+        <p>
+          <select onChange={this.onChange}>
+            <option value="">Select text</option>
+            {this.getOptions()}
+          </select>
+        </p>
+        <p>
+          <button onClick={this.onAddClick}>Add new</button>
+        </p>
+      </div>
     )
   }
 }
-
-export default TextSelector;

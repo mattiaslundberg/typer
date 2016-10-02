@@ -1,13 +1,23 @@
 exports[`TextSelectorTest Render selectable items 1`] = `
-<select
-  onChange={[Function bound onChange]}>
-  <option
-    value="">
-    Select text
-  </option>
-  <option
-    value="some full text">
-    One
-  </option>
-</select>
+<div>
+  <p>
+    <select
+      onChange={[Function bound onChange]}>
+      <option
+        value="">
+        Select text
+      </option>
+      <option
+        value="some full text">
+        One
+      </option>
+    </select>
+  </p>
+  <p>
+    <button
+      onClick={[Function bound onAddClick]}>
+      Add new
+    </button>
+  </p>
+</div>
 `;
