@@ -39,4 +39,14 @@ describe("TextSelectorTest", () => {
     let result = instance.prepareText("abc \t\n\n\t  bc  ")
     expect(result.match(/\s{2,}/)).toBe(null)
   })
+
+  describe('Upload', () => {
+    it('Render input form', () => {
+      let tree = render()
+      let instance = tree.getMountedInstance()
+      instance.onAddClick()
+
+      expect(tree.getRenderOutput().props.children).toMatchSnapshot()
+    })
+  })
 })
