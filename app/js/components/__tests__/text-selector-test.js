@@ -3,7 +3,7 @@ import TextSelector from '../text-selector'
 import sd from 'skin-deep'
 
 describe("TextSelectorTest", () => {
-  const render = (cb=jest.genMockFn()) => {
+  const render = (cb=jest.fn()) => {
     return sd.shallowRender(
       <TextSelector onSelect={cb} options={[{"fulltext": "some full text", "name": "One"}]}/>
     )
