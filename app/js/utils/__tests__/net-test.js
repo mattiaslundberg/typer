@@ -1,15 +1,16 @@
 import React from 'react'
 import request from '../net'
 
-let open, send, onload, onerror
+let open, send, onload, onerror, setRequestHeader
 
 function createXHRmock() {
+  setRequestHeader = jest.fn()
   open = jest.fn()
-
   send = jest.fn()
 
   const xhrMockClass = function () {
     return {
+        setRequestHeader,
         open,
         send
     }
@@ -35,5 +36,6 @@ describe('Net.request', () => {
     request("http://test.com/test", done, "POST", data)
     expect(open).toBeCalledWith("POST", "http://test.com/test")
     expect(send).toBeCalledWith(data)
+    expect(setRequestHeader).toBeCalledWith("Content-Type", "application/json")
   })
 })

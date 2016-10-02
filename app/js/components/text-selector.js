@@ -1,4 +1,5 @@
 import React from 'react'
+import request from '../utils/net.js'
 
 export default class TextSelector extends React.Component {
   constructor() {
@@ -30,8 +31,13 @@ export default class TextSelector extends React.Component {
   }
 
   onNewSubmit() {
-    console.warn(this._name.value, this._text.value)
-
+    const data = {
+      name: this._name.value,
+      fulltext: this._text.value,
+    }
+    request("/api/texts/", (response) => {
+      this.setState({isUploading: false})
+    }, "POST", JSON.stringify(data))
   }
 
   prepareText(text) {

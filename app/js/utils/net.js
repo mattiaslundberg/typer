@@ -6,5 +6,8 @@ export default function request(url, onDone, method="GET", data=null) {
     }
   }
   request.open(method, url)
+  if (method == "POST") {
+    request.setRequestHeader("Content-Type", "application/json")
+  }
   request.send(data)
 }
