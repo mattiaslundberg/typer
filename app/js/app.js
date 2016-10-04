@@ -1,7 +1,7 @@
 import React from 'react'
 import Typer from './typer.js'
 import TextSelector from './views/text-selector.js'
-import request from './utils/net.js'
+import {get} from './utils/net.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -13,9 +13,10 @@ class App extends React.Component {
 
     this.onTextSelected = this.onTextSelected.bind(this)
 
-    request("/api/texts/", (response) => {
-      this.setState({options: JSON.parse(response)._items})
-    })
+    get("/api/texts/").then(
+      (response) => this.setState({options: JSON.parse(response)._items}),
+      (error) => {}
+    )
   }
 
   onTextSelected(text) {

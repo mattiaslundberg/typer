@@ -12,3 +12,19 @@ export default function request(url, onDone, method="GET", data=null) {
   }
   request.send(data)
 }
+
+export function get(url) {
+  return new Promise((resolve, reject) => {
+    let request = new XMLHttpRequest()
+    request.onload = function(e) {
+      if (this.status == 200) {
+        resolve(this.response)
+      } else {
+        reject(this.response)
+      }
+    }
+
+    request.open("GET", url, true)
+    request.send()
+  })
+}
