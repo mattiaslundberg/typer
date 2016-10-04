@@ -16,46 +16,12 @@ describe("TextSelectorTest", () => {
     expect(tree.getRenderOutput()).toMatchSnapshot()
   })
 
-  it('Triggers callback event', () => {
-    let cb = jest.fn()
-    let tree = render(cb)
-    let instance = tree.getMountedInstance()
-
-    let evt = {
-      target: {
-        value: "test",
-      },
-    }
-
-    instance.onChange(evt)
-    expect(cb).toBeCalled()
-    expect(cb.mock.calls[0][0].indexOf("test")).not.toBe(-1)
-  })
-
-  it('Correctly removes duplicate spaces', () => {
+  it('Returns to select view after cancel', () => {
     let tree = render()
     let instance = tree.getMountedInstance()
+    instance.onAddClick()
+    instance.onNewCancel()
 
-    let result = instance.prepareText("abc \t\n\n\t  bc  ")
-    expect(result.match(/\s{2,}/)).toBe(null)
-  })
-
-  describe('Upload', () => {
-    it('Render input form', () => {
-      let tree = render()
-      let instance = tree.getMountedInstance()
-      instance.onAddClick()
-
-      expect(tree.getRenderOutput().props.children).toMatchSnapshot()
-    })
-
-    it('Returns to select view after cancel', () => {
-      let tree = render()
-      let instance = tree.getMountedInstance()
-      instance.onAddClick()
-      instance.onNewCancel()
-
-      expect(tree.getRenderOutput().props.children).toMatchSnapshot()
-    })
+    expect(tree.getRenderOutput().props.children).toMatchSnapshot()
   })
 })
