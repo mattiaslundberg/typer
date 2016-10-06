@@ -1,16 +1,18 @@
-export default function request(url, onDone, method="GET", data=null) {
-  let request = new XMLHttpRequest()
-  request.onreadystatechange = () => {
-    if (request.readyState == XMLHttpRequest.DONE && request.status >= 200 &&
-      request.status < 300) {
-      onDone(request.responseText)
+export function post(url, data, expectedResponseCode) {
+  return new Promise((resolve, reject) => {
+    let request = new XMLHttpRequest()
+    request.onload = function(e) {
+      if (this.status == expectedResponseCode) {
+        resolve(this.response)
+      } else {
+        reject(this.response)
+      }
     }
-  }
-  request.open(method, url)
-  if (method == "POST") {
+
+    request.open("POST", url, true)
     request.setRequestHeader("Content-Type", "application/json")
-  }
-  request.send(data)
+    request.send(JSON.stringify(data))
+  })
 }
 
 export function get(url) {

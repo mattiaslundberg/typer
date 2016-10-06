@@ -1,5 +1,5 @@
 import React from 'react'
-import request from '../utils/net.js'
+import {post} from '../utils/net.js'
 
 export default class TextUploader extends React.Component {
   constructor(props) {
@@ -13,10 +13,10 @@ export default class TextUploader extends React.Component {
       fulltext: this._text.value,
     }
 
-    let self = this
-    request("/api/texts/", (response) => {
-      self.props.onUpload && self.props.onUpload()
-    }, "POST", JSON.stringify(data))
+    post("/api/texts/", data, 201).then(
+      () => { this.props.onUpload && this.props.onUpload() },
+      () => { }
+    )
   }
 
   render() {
