@@ -9,25 +9,6 @@
   roles:
     - letsencrypt
     - eve
-
-  tasks:
-    - name: Upgrade system
-      apt: upgrade=dist update_cache=yes
-
-    - name: Install MongoDB
-      apt: name=mongodb state=latest
-
-    - name: Compile js bundle locally
-      command: node node_modules/webpack/bin/webpack.js -vpc --config webpack.config.prod.js
-      delegate_to: 127.0.0.1
-      become: no
-
-    - name: Deploy html
-      copy:
-        src: ../index.html
-        dest: /var/www/{{ domain_name }}/
-
-    - name: Deploy js bundle
-      copy:
-        src: ../dist/bundle.js
-        dest: /var/www/{{ domain_name }}/
+    - mongo
+    - deploy
+    - upgraded
