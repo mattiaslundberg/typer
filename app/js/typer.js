@@ -25,7 +25,7 @@ export default class Typer extends React.Component {
         evt.getModifierState("Super") ||
         evt.getModifierState("Win")) {
       evt.preventDefault()
-      return;
+      return
     }
 
     if (this.state.charsTyped == 0) {

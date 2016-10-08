@@ -6,7 +6,7 @@ describe('CharDisplayTest', () => {
   it('Renders with correct class', () => {
     const component = renderer.create(
       <CharDisplay cssClass="myclass" char="B" />
-    );
+    )
 
     expect(component.toJSON()).toMatchSnapshot()
   })

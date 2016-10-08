@@ -1,4 +1,4 @@
-let webpack = require('webpack');
+let webpack = require('webpack')
 
 module.exports = {
   context: __dirname + '/app',
@@ -41,4 +41,4 @@ module.exports = {
       },
     ],
   },
-};
+}
