@@ -63,3 +63,10 @@ exports[`AppTest Renders Typer after text is set 1`] = `
     ]
   } />
 `;
+
+exports[`AppTest Renders error view 1`] = `
+<div
+  className="error-message">
+  Something went wrong
+</div>
+`;

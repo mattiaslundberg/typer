@@ -14,8 +14,8 @@ export default class App extends React.Component {
     this.onTextSelected = this.onTextSelected.bind(this)
 
     get("/api/texts/").then(
-      (response) => this.setState({options: JSON.parse(response)._items}),
-      (error) => {}
+      response => this.setState({options: JSON.parse(response)._items}),
+      error => this.setState({error: JSON.parse(error)._error})
     )
   }
 
@@ -26,13 +26,15 @@ export default class App extends React.Component {
 
   render() {
     if (this.state.text) {
-      return (
-        <Typer fullText={this.state.text.split("")} />
-      )
-    }
+      return <Typer fullText={this.state.text.split("")} />
+    } else if (this.state.error) {
+      return <div className="error-message">{this.state.error.message}</div>
+    } else {
+      return <TextSelector
+        onSelect={this.onTextSelected}
+        options={this.state.options}
+      />
 
-    return (
-      <TextSelector onSelect={this.onTextSelected} options={this.state.options} />
-    )
+    }
   }
 }

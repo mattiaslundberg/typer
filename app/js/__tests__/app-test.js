@@ -28,4 +28,11 @@ describe('AppTest', () => {
     instance.setState({options: [{"value": "one", "name": "one"}]})
     expect(tree.getRenderOutput()).toMatchSnapshot()
   })
+
+  it('Renders error view', () => {
+    let tree = render()
+    let instance = tree.getMountedInstance()
+    instance.setState({error: {message: "Something went wrong"}})
+    expect(tree.getRenderOutput()).toMatchSnapshot()
+  })
 })
