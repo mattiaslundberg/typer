@@ -5,6 +5,7 @@ After=network.target remote-fs.target nss-lookup.target
 [Service]
 Type=simple
 Restart=always
+Environment="PRODUCTION=1"
 ExecStart=/root/venvs/eve/bin/python /var/www/{{ domain_name }}/run.py
 
 [Install]

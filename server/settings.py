@@ -1,3 +1,5 @@
+import os
+
 DOMAIN = {
     "texts": {
         "schema": {
@@ -16,3 +18,6 @@ DOMAIN = {
 
 RESOURCE_METHODS = ["GET", "POST"]
 ITEM_METHODS = ["GET"]
+
+if os.environ.get("PRODUCTION"):
+    MONGO_PASSWORD = '{{ mongo_password }}'

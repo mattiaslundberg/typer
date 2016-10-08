@@ -2,3 +2,8 @@
 - name: Install MongoDB
   apt: name=mongodb state=latest
 
+- name: Instapp MongoDB python
+  apt: name=python-pymongo state=present
+
+- name: Add user for MongoDB
+  mongodb_user: database=eve name=eve password={{ mongo_password }} state=present
