@@ -2,10 +2,6 @@ import React from 'react'
 import CharDisplay from './char-display'
 
 export default class StatusDisplay extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   getChars() {
     const typedChars = this.props.typedSequence.split("")
     let invalid = false
