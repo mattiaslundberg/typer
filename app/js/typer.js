@@ -17,13 +17,14 @@ export default class Typer extends React.Component {
 
   onType(evt) {
     if (
-        evt.keyCode == 16 ||
-        evt.keyCode == 9 ||
-        evt.getModifierState("Fn") ||
-        evt.getModifierState("Hyper") ||
-        evt.getModifierState("OS") ||
-        evt.getModifierState("Super") ||
-        evt.getModifierState("Win")) {
+      evt.keyCode == 16 ||
+      evt.keyCode == 9 ||
+      evt.getModifierState("Fn") ||
+      evt.getModifierState("Hyper") ||
+      evt.getModifierState("OS") ||
+      evt.getModifierState("Super") ||
+      evt.getModifierState("Win")
+    ) {
       evt.preventDefault()
       return
     }
