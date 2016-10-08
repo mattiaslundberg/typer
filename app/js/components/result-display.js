@@ -1,10 +1,6 @@
 import React from 'react'
 
 export default class ResultDisplay extends React.Component {
-  constructor() {
-    super()
-  }
-
   render() {
     const milliseconds = this.props.time
     const writtenChars = this.props.textLength
