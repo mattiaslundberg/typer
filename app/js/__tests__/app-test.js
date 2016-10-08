@@ -35,4 +35,13 @@ describe('AppTest', () => {
     instance.setState({error: {message: "Something went wrong"}})
     expect(tree.getRenderOutput()).toMatchSnapshot()
   })
+
+  it('Restores when starting new', () => {
+    let tree = render()
+    let instance = tree.getMountedInstance()
+    instance.setState({error: "abc", text: "some text"})
+    instance.startNew()
+    expect(instance.state.error).toBe(null)
+    expect(instance.state.text).toBe("")
+  })
 })

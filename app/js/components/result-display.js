@@ -14,6 +14,8 @@ export default class ResultDisplay extends React.Component {
         <div>Time: {seconds.toFixed()}s</div>
         <div>Chars/m: {charsperm.toFixed()}</div>
         <div>Words/m: {wordsperm.toFixed()}</div>
+
+        <button onClick={this.props.onNewClick}>Try again</button>
       </div>
     )
   }

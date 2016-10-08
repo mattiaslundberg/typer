@@ -61,7 +61,8 @@ exports[`AppTest Renders Typer after text is set 1`] = `
       "d",
       "!"
     ]
-  } />
+  }
+  onNewClick={[Function bound startNew]} />
 `;
 
 exports[`AppTest Renders error view 1`] = `

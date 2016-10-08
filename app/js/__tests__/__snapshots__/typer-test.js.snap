@@ -1,9 +1,7 @@
 exports[`TyperTest Renders initial text 1`] = `
 <div
   className="typer">
-  <function StatusDisplay(props) {/* istanbul ignore next */_classCallCheck(this, StatusDisplay);return _possibleConstructorReturn(this, (StatusDisplay.__proto__ || Object.getPrototypeOf(StatusDisplay)).call(this,
-      props));
-    }
+  <function StatusDisplay() {_classCallCheck(this, StatusDisplay);return _possibleConstructorReturn(this, (StatusDisplay.__proto__ || Object.getPrototypeOf(StatusDisplay)).apply(this, arguments));}
     fullText={
       Array [
         "h",
@@ -28,9 +26,8 @@ exports[`TyperTest Renders initial text 1`] = `
 exports[`TyperTest Renders result 1`] = `
 <div
   className="typer">
-  <function ResultDisplay() {/* istanbul ignore next */_classCallCheck(this, ResultDisplay);return _possibleConstructorReturn(this, (ResultDisplay.__proto__ || Object.getPrototypeOf(ResultDisplay)).call(this));
-  
-    }
+  <function ResultDisplay() {_classCallCheck(this, ResultDisplay);return _possibleConstructorReturn(this, (ResultDisplay.__proto__ || Object.getPrototypeOf(ResultDisplay)).apply(this, arguments));}
+    onNewClick={undefined}
     textLength={5}
     time={200} />
 </div>

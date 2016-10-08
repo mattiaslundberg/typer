@@ -13,5 +13,9 @@ exports[`ResultDisplayTest WPM calculation is correct 1`] = `
     Words/m: 
     60000
   </div>
+  <button
+    onClick={undefined}>
+    Try again
+  </button>
 </div>
 `;

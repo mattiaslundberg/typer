@@ -48,7 +48,11 @@ export default class Typer extends React.Component {
 
       return (
         <div className="typer">
-          <ResultDisplay time={milliseconds} textLength={writtenChars} />
+          <ResultDisplay
+            time={milliseconds}
+            textLength={writtenChars}
+            onNewClick={this.props.onNewClick}
+          />
         </div>
       )
     }
