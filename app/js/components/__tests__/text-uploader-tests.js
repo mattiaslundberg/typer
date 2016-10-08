@@ -17,4 +17,12 @@ describe("TextSelectorTest", () => {
   })
 
   // TODO: DOM Tests
+
+  it('Render errors', () => {
+    let tree = render()
+    let instance = tree.getMountedInstance()
+    instance.setState({error: {message: "Something went wrong"}})
+
+    expect(tree.getRenderOutput()).toMatchSnapshot()
+  })
 })

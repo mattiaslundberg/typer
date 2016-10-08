@@ -1,3 +1,10 @@
+exports[`TextSelectorTest Render errors 1`] = `
+<div
+  className="error-message">
+  Something went wrong
+</div>
+`;
+
 exports[`TextSelectorTest Render input form 1`] = `
 Array [
   <p>

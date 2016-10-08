@@ -5,6 +5,7 @@ export default class TextUploader extends React.Component {
   constructor(props) {
     super(props)
     this.onNewSubmit = this.onNewSubmit.bind(this)
+    this.state = {}
   }
 
   onNewSubmit() {
@@ -14,12 +15,16 @@ export default class TextUploader extends React.Component {
     }
 
     post("/api/texts/", data, 201).then(
-      () => { this.props.onUpload && this.props.onUpload() },
-      () => { }
+      response => this.props.onUpload && this.props.onUpload(),
+      error => this.setState({error: JSON.parse(error)._error})
     )
   }
 
   render() {
+    if (this.state.error) {
+      return <div className="error-message">{this.state.error.message}</div>
+    }
+
     return (
       <div>
         <p>
