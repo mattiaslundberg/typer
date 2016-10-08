@@ -8,6 +8,7 @@
 
   roles:
     - letsencrypt
+    - eve
 
   tasks:
     - name: Upgrade system
@@ -15,24 +16,6 @@
 
     - name: Install MongoDB
       apt: name=mongodb state=latest
-
-    - name: Install Python
-      apt:
-        name: python3-pip
-        state: latest
-
-    - name: Install virtualenv
-      pip: executable=pip3 name=virtualenv state=latest
-
-    - name: Create virtualenv for eve
-      command: virtualenv --no-site-packages --python python3 ~/venvs/eve
-      args:
-        creates: ~/venvs/eve
-
-    - name: Install Eve service
-      template:
-        src: templates/eved.service.j2
-        dest: /lib/systemd/system/eved.service
 
     - name: Compile js bundle locally
       command: node node_modules/webpack/bin/webpack.js -vpc --config webpack.config.prod.js
@@ -48,27 +31,3 @@
       copy:
         src: ../dist/bundle.js
         dest: /var/www/{{ domain_name }}/
-
-    - name: Deploy eve application
-      copy:
-        src: ../server/
-        dest: /var/www/{{ domain_name }}/
-
-    - name: Install python requirements
-      command: /root/venvs/eve/bin/pip install -r /var/www/{{ domain_name }}/requirements.txt
-
-    - name: Reload daemons
-      command: systemctl daemon-reload
-
-    - name: Restart and Enable Eve service
-      service:
-        name: eved
-        enabled: yes
-        state: restarted
-
-    - name: Generate dhparams
-      shell: openssl dhparam -out /etc/nginx/dhparams.pem 2048
-      args:
-        creates: /etc/nginx/dhparams.pem
-
-  handlers:

@@ -1,0 +1,13 @@
+---
+- name: daemon reload
+  command: systemctl daemon-reload
+
+- name: enable eve
+  service:
+    name: eved
+    enabled: yes
+
+- name: restart eve
+  service:
+    name: eved
+    state: restarted

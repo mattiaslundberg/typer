@@ -1,0 +1,34 @@
+---
+- name: Install Python
+  apt:
+    name: python3-pip
+    state: latest
+
+- name: Install virtualenv
+  pip: executable=pip3 name=virtualenv state=latest
+
+- name: Create virtualenv for eve
+  command: virtualenv --no-site-packages --python python3 ~/venvs/eve
+  args:
+    creates: ~/venvs/eve
+
+- name: Install Eve service
+  template:
+    src: templates/eved.service.j2
+    dest: /lib/systemd/system/eved.service
+  notify:
+    - daemon reload
+    - enable eve
+    - restart eve
+
+- name: Deploy eve application
+  copy:
+    src: ../server/
+    dest: /var/www/{{ domain_name }}/
+  notify:
+    - restart eve
+
+- name: Install python requirements
+  command: /root/venvs/eve/bin/pip install -r /var/www/{{ domain_name }}/requirements.txt
+  notify:
+    - restart eve
