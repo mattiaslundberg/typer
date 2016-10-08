@@ -1,7 +1,7 @@
 import React from 'react'
 import CharDisplay from './char-display'
 
-class StatusDisplay extends React.Component {
+export default class StatusDisplay extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -33,5 +33,3 @@ class StatusDisplay extends React.Component {
     )
   }
 }
-
-export default StatusDisplay;

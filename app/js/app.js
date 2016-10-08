@@ -3,7 +3,7 @@ import Typer from './typer.js'
 import TextSelector from './views/text-selector.js'
 import {get} from './utils/net.js'
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -36,5 +36,3 @@ class App extends React.Component {
     )
   }
 }
-
-export default App;

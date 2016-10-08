@@ -3,7 +3,7 @@ import Input from './components/input'
 import StatusDisplay from './components/status-display'
 import ResultDisplay from './components/result-display'
 
-class Typer extends React.Component {
+export default class Typer extends React.Component {
   constructor(props) {
     super(props)
 
@@ -62,5 +62,3 @@ class Typer extends React.Component {
     )
   }
 }
-
-export default Typer;

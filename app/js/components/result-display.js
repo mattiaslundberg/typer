@@ -1,6 +1,6 @@
 import React from 'react'
 
-class ResultDisplay extends React.Component {
+export default class ResultDisplay extends React.Component {
   constructor() {
     super()
   }
@@ -22,5 +22,3 @@ class ResultDisplay extends React.Component {
     )
   }
 }
-
-export default ResultDisplay;
