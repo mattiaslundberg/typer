@@ -1,3 +1,5 @@
+import os
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 import json
 import settings
 from flask import request, session, redirect
@@ -94,12 +96,22 @@ def callback():
             return "Failed to get google login."
         google = get_google_auth(token=token)
         resp = google.get(settings.OAUTH_USER_INFO)
+
         if resp.status_code == 200:
             user_data = resp.json()
-            # email = user_data['email']
-            print(user_data)
-            # TODO: Save user data
+            normalized_user_data = {
+                "user_id": user_data['id'],
+                "name": user_data['name'],
+                "email": user_data['email'],
+                "avatar": user_data['picture'],
+            }
+
+            users = app.data.driver.db['users']
+            users.insert(normalized_user_data)
+            user = get_user_from_id(user_data['id'])
+            login_user(user)
             return redirect("/")
+
         return "Failed to get user data"
 
 if __name__ == '__main__':
