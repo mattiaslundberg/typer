@@ -1,73 +1,81 @@
 exports[`AppTest Renders TextSelector 1`] = `
-<function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
-
-
-    /* istanbul ignore next */_this.state = {
-      isUploading: false };
-
-
-    /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
-    /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
-  }
-  onSelect={[Function bound onTextSelected]}
-  options={Array []} />
+<div>
+  <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
+  
+  
+      /* istanbul ignore next */_this.state = {
+        isUploading: false };
+  
+  
+      /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
+      /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
+    }
+    onSelect={[Function bound onTextSelected]}
+    options={Array []} />
+</div>
 `;
 
 exports[`AppTest Renders TextSelector 2`] = `
-<function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
-
-
-    /* istanbul ignore next */_this.state = {
-      isUploading: false };
-
-
-    /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
-    /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
-  }
-  onSelect={[Function bound onTextSelected]}
-  options={
-    Array [
-      Object {
-        "name": "one",
-        "value": "one"
-      }
-    ]
-  } />
+<div>
+  <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
+  
+  
+      /* istanbul ignore next */_this.state = {
+        isUploading: false };
+  
+  
+      /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
+      /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
+    }
+    onSelect={[Function bound onTextSelected]}
+    options={
+      Array [
+        Object {
+          "name": "one",
+          "value": "one"
+        }
+      ]
+    } />
+</div>
 `;
 
 exports[`AppTest Renders Typer after text is set 1`] = `
-<function Typer(props) {/* istanbul ignore next */_classCallCheck(this, Typer);var _this = _possibleConstructorReturn(this, (Typer.__proto__ || Object.getPrototypeOf(Typer)).call(this,
-    props));
-
-    /* istanbul ignore next */_this.state = {
-      typedSequence: "",
-      charsTyped: 0 };
-
-
-    /* istanbul ignore next */_this.onType = /* istanbul ignore next */_this.onType.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
-  }
-  fullText={
-    Array [
-      "H",
-      "e",
-      "l",
-      "l",
-      "o",
-      " ",
-      "w",
-      "o",
-      "r",
-      "l",
-      "d",
-      "!"
-    ]
-  }
-  onNewClick={[Function bound startNew]} />
+<div>
+  <function Typer(props) {/* istanbul ignore next */_classCallCheck(this, Typer);var _this = _possibleConstructorReturn(this, (Typer.__proto__ || Object.getPrototypeOf(Typer)).call(this,
+      props));
+  
+      /* istanbul ignore next */_this.state = {
+        typedSequence: "",
+        charsTyped: 0 };
+  
+  
+      /* istanbul ignore next */_this.onType = /* istanbul ignore next */_this.onType.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
+    }
+    fullText={
+      Array [
+        "H",
+        "e",
+        "l",
+        "l",
+        "o",
+        " ",
+        "w",
+        "o",
+        "r",
+        "l",
+        "d",
+        "!"
+      ]
+    }
+    onNewClick={[Function bound startNew]} />
+</div>
 `;
 
 exports[`AppTest Renders error view 1`] = `
-<div
-  className="error-message">
-  Something went wrong
+<div>
+  <div
+    className="error-message">
+    Something went wrong
+  </div>
 </div>
 `;

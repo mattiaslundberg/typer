@@ -33,19 +33,28 @@ export default class App extends React.Component {
 
 
   render() {
+    let modules = []
     if (this.state.text) {
-      return <Typer
+      modules.push(<Typer
         fullText={this.state.text.split("")}
         onNewClick={this.startNew}
-      />
+      />)
     } else if (this.state.error) {
-      return <div className="error-message">{this.state.error.message}</div>
+      modules.push(<div
+        className="error-message">
+          {this.state.error.message}
+      </div>)
     } else {
-      return <TextSelector
+      modules.push(<TextSelector
         onSelect={this.onTextSelected}
         options={this.state.options}
-      />
-
+      />)
     }
+
+    return (
+      <div>
+        {modules}
+      </div>
+    )
   }
 }
