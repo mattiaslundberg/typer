@@ -1,5 +1,3 @@
-import os
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 import json
 import settings
 from flask import request, session, redirect
