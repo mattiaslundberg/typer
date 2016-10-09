@@ -18,6 +18,11 @@ export default class App extends React.Component {
       response => this.setState({options: JSON.parse(response)._items}),
       error => this.setState({error: JSON.parse(error)._error})
     )
+
+    get("/api/login/").then(
+      response => this.setState({auth_url: JSON.parse(response).auth_url}),
+      error => this.setState({error: "Failed to get login url"})
+    )
   }
 
   startNew() {
