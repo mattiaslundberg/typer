@@ -19,7 +19,7 @@ export default class App extends React.Component {
       error => this.setState({error: JSON.parse(error)._error})
     )
 
-    get("/api/login/").then(
+    get("/api/oauth/").then(
       response => this.setState({auth_url: JSON.parse(response).auth_url}),
       error => this.setState({error: "Failed to get login url"})
     )

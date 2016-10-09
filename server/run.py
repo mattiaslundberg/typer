@@ -9,7 +9,7 @@ from flask_login import LoginManager, login_user, current_user
 app = Eve()
 
 login_manager = LoginManager(app)
-login_manager.login_view = "login"
+login_manager.login_view = "oauth"
 login_manager.session_protection = "strong"
 
 app.secret_key = settings.APP_SECRET_KEY
@@ -60,8 +60,8 @@ def get_google_auth(state=None, token=None):
     )
 
 
-@app.route('/login')
-def login():
+@app.route('/oauth')
+def oauth():
     if current_user and current_user.is_authenticated:
         return json.dumps(current_user.client_data)
     google = get_google_auth()
