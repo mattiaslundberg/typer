@@ -4,6 +4,10 @@ After=network.target remote-fs.target nss-lookup.target
 
 [Service]
 Type=simple
+Environment="APP_SECRET_KEY={{ APP_SECRET_KEY }}"
+Environment="OAUTH_CLIENT_ID={{ OAUTH_CLIENT_ID }}"
+Environment="OAUTH_CLIENT_SECRET={{ OAUTH_CLIENT_SECRET }}"
+Environment="OAUTH_REDIRECT_URI={{ OAUTH_REDIRECT_URI }}"
 Restart=always
 ExecStart=/root/venvs/eve/bin/python /var/www/{{ domain_name }}/run.py
 
