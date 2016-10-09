@@ -79,3 +79,27 @@ exports[`AppTest Renders error view 1`] = `
   </div>
 </div>
 `;
+
+exports[`AppTest Renders login link after getting the url 1`] = `
+<div>
+  <div
+    className="login">
+    <a
+      href="http://test.com/login">
+      Login using Google
+    </a>
+  </div>
+  <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
+  
+  
+      /* istanbul ignore next */_this.state = {
+        isUploading: false };
+  
+  
+      /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
+      /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
+    }
+    onSelect={[Function bound onTextSelected]}
+    options={Array []} />
+</div>
+`;

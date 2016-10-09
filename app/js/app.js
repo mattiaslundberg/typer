@@ -39,6 +39,15 @@ export default class App extends React.Component {
 
   render() {
     let modules = []
+
+    if (this.state.auth_url) {
+      modules.push(
+        <div key="loginlink" className="login">
+          <a href={this.state.auth_url}>Login using Google</a>
+        </div>
+      )
+    }
+
     if (this.state.text) {
       modules.push(<Typer
         key="typer"

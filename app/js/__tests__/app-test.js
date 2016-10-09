@@ -44,4 +44,11 @@ describe('AppTest', () => {
     expect(instance.state.error).toBe(null)
     expect(instance.state.text).toBe("")
   })
+
+  it('Renders login link after getting the url', () => {
+    let tree = render()
+    let instance = tree.getMountedInstance()
+    instance.setState({auth_url: "http://test.com/login"})
+    expect(tree.getRenderOutput()).toMatchSnapshot()
+  })
 })
