@@ -1,5 +1,6 @@
 import React from 'react'
 import Typer from './typer.js'
+import OAuth from './components/oauth'
 import TextSelector from './views/text-selector.js'
 import {get} from './utils/net.js'
 
@@ -18,11 +19,6 @@ export default class App extends React.Component {
       response => this.setState({options: JSON.parse(response)._items}),
       error => this.setState({error: JSON.parse(error)._error})
     )
-
-    get("/api/oauth/").then(
-      response => this.setState({auth_url: JSON.parse(response).auth_url}),
-      error => this.setState({error: "Failed to get login url"})
-    )
   }
 
   startNew() {
@@ -40,13 +36,9 @@ export default class App extends React.Component {
   render() {
     let modules = []
 
-    if (this.state.auth_url) {
-      modules.push(
-        <div key="loginlink" className="login">
-          <a href={this.state.auth_url}>Login using Google</a>
-        </div>
-      )
-    }
+    modules.push(
+      <OAuth key="auth" />
+    )
 
     if (this.state.text) {
       modules.push(<Typer

@@ -1,5 +1,14 @@
 exports[`AppTest Renders TextSelector 1`] = `
 <div>
+  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
+      props));
+      /* istanbul ignore next */_this.state = {};
+  
+      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
+      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
+      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
+  
+    } />
   <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
   
   
@@ -17,6 +26,15 @@ exports[`AppTest Renders TextSelector 1`] = `
 
 exports[`AppTest Renders TextSelector 2`] = `
 <div>
+  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
+      props));
+      /* istanbul ignore next */_this.state = {};
+  
+      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
+      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
+      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
+  
+    } />
   <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
   
   
@@ -41,6 +59,15 @@ exports[`AppTest Renders TextSelector 2`] = `
 
 exports[`AppTest Renders Typer after text is set 1`] = `
 <div>
+  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
+      props));
+      /* istanbul ignore next */_this.state = {};
+  
+      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
+      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
+      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
+  
+    } />
   <function Typer(props) {/* istanbul ignore next */_classCallCheck(this, Typer);var _this = _possibleConstructorReturn(this, (Typer.__proto__ || Object.getPrototypeOf(Typer)).call(this,
       props));
   
@@ -73,6 +100,15 @@ exports[`AppTest Renders Typer after text is set 1`] = `
 
 exports[`AppTest Renders error view 1`] = `
 <div>
+  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
+      props));
+      /* istanbul ignore next */_this.state = {};
+  
+      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
+      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
+      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
+  
+    } />
   <div
     className="error-message">
     Something went wrong
@@ -82,13 +118,15 @@ exports[`AppTest Renders error view 1`] = `
 
 exports[`AppTest Renders login link after getting the url 1`] = `
 <div>
-  <div
-    className="login">
-    <a
-      href="http://test.com/login">
-      Login using Google
-    </a>
-  </div>
+  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
+      props));
+      /* istanbul ignore next */_this.state = {};
+  
+      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
+      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
+      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
+  
+    } />
   <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
   
   
