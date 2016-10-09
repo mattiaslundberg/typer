@@ -19,7 +19,7 @@ exports[`AppTest Renders TextSelector 1`] = `
       /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
       /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
     }
-    onSelect={[Function bound onTextSelected]}
+    onSelect={[Function]}
     options={Array []} />
 </div>
 `;
@@ -45,13 +45,13 @@ exports[`AppTest Renders TextSelector 2`] = `
       /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
       /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
     }
-    onSelect={[Function bound onTextSelected]}
+    onSelect={[Function]}
     options={
       Array [
         Object {
           "name": "one",
-          "value": "one"
-        }
+          "value": "one",
+        },
       ]
     } />
 </div>
@@ -91,10 +91,10 @@ exports[`AppTest Renders Typer after text is set 1`] = `
         "r",
         "l",
         "d",
-        "!"
+        "!",
       ]
     }
-    onNewClick={[Function bound startNew]} />
+    onNewClick={[Function]} />
 </div>
 `;
 
@@ -137,7 +137,7 @@ exports[`AppTest Renders login link after getting the url 1`] = `
       /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
       /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
     }
-    onSelect={[Function bound onTextSelected]}
+    onSelect={[Function]}
     options={Array []} />
 </div>
 `;

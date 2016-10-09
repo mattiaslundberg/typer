@@ -27,13 +27,13 @@ Array [
 </p>,
   <p>
     <button
-        onClick={[Function bound onNewSubmit]}>
+        onClick={[Function]}>
         Save
     </button>
     <button
         onClick={undefined}>
         Cancel
     </button>
-</p>
+</p>,
 ]
 `;
