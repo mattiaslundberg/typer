@@ -23,8 +23,9 @@ Practice your typing skills with an in-browser app.
 [typer]
 example.com ansible_user=root letsencrypt_email=me@mlundbergse domain_name=example.com
 ```
-4. Run `ansible-playbook ansible/playbook.yml` to install everything needed on the server
-5. Start typing on real server.
+4. Create `ansible/custom.yml` vault containing all required variables. and `~/.vault_pass.txt` containing the vauld password.
+5. Run `ansible-playbook -e @ansible/custom.yml --vault-password-file ~/.vault_pass.txt ansible/playbook.yml` to install everything needed on the server
+6. Start typing on real server.
 
 # Attributions
 Based on [RoselPadilla/React-ES6-Boilerplate](https://github.com/RoselPadilla/React-ES6-Boilerplate).
