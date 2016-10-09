@@ -4,8 +4,7 @@ from flask import request, session, redirect
 from requests import HTTPError
 from requests_oauthlib import OAuth2Session
 from eve import Eve
-from flask_login import LoginManager
-
+from flask_login import LoginManager, login_user, current_user
 
 app = Eve()
 
@@ -14,6 +13,34 @@ login_manager.login_view = "login"
 login_manager.session_protection = "strong"
 
 app.secret_key = settings.APP_SECRET_KEY
+
+
+class User:
+    is_active = True
+
+    def __init__(self, user_data):
+        self.data = user_data
+
+    def get_id(self):
+        return self.data['user_id']
+
+    @property
+    def is_authenticated(self):
+        return bool(self.data.get('user_id'))
+
+    @property
+    def client_data(self):
+        return {
+            "name": self.data["name"],
+            "email": self.data["email"],
+        }
+
+
+@login_manager.user_loader
+def get_user_from_id(user_id):
+    users = app.data.driver.db['users']
+    user_data = users.find_one({'user_id': user_id})
+    return User(user_data)
 
 
 def get_google_auth(state=None, token=None):
@@ -35,6 +62,8 @@ def get_google_auth(state=None, token=None):
 
 @app.route('/login')
 def login():
+    if current_user and current_user.is_authenticated:
+        return json.dumps(current_user.client_data)
     google = get_google_auth()
     auth_url, state = google.authorization_url(
         settings.OAUTH_AUTH_URI,
