@@ -4,7 +4,7 @@ from flask import request, session, redirect
 from requests import HTTPError
 from requests_oauthlib import OAuth2Session
 from eve import Eve
-from flask_login import LoginManager, login_user, current_user
+from flask_login import LoginManager, login_user, current_user, logout_user
 
 app = Eve()
 
@@ -58,6 +58,12 @@ def get_google_auth(state=None, token=None):
         redirect_uri=settings.OAUTH_REDIRECT_URI,
         scope=settings.OAUTH_SCOPE
     )
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect("/")
 
 
 @app.route('/oauth')
