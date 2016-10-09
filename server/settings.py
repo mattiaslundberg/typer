@@ -21,6 +21,9 @@ ITEM_METHODS = ["GET"]
 
 DEBUG = os.environ.get("EVE_DEBUG", False)
 
+if DEBUG:
+    os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
+
 APP_SECRET_KEY = os.environ["APP_SECRET_KEY"]
 OAUTH_CLIENT_ID = (os.environ["OAUTH_CLIENT_ID"])
 OAUTH_CLIENT_SECRET = os.environ["OAUTH_CLIENT_SECRET"]
