@@ -7,7 +7,12 @@ Practice your typing skills with an in-browser app.
 
 1. Run `npm install`
 2. Run `npm start`
-3. Navigate to http://localhost:8080 to test and start hacking.
+3. Change directory to server
+4. Create python3 virtualenv
+5. Run `pip install -r requirements.txt`
+6. Run `. ./devenv.sh` (add real oauth settings if needed)
+7. Run `python run.py`
+8. Navigate to http://localhost:8080 to test and start hacking.
 
 # Production deployment
 
