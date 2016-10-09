@@ -19,6 +19,7 @@ DOMAIN = {
 RESOURCE_METHODS = ["GET", "POST"]
 ITEM_METHODS = ["GET"]
 
+DEBUG = os.environ.get("EVE_DEBUG", False)
 
 APP_SECRET_KEY = os.environ["APP_SECRET_KEY"]
 OAUTH_CLIENT_ID = (os.environ["OAUTH_CLIENT_ID"])
