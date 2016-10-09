@@ -1,4 +1,6 @@
 ---
 - name: Install MongoDB
   apt: name=mongodb state=latest
-
+  notify:
+    - restart mongodb
+    - enable mongodb
