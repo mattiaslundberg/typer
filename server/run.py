@@ -1,6 +1,6 @@
 import json
 import settings
-from flask import request, session
+from flask import request, session, redirect
 from requests import HTTPError
 from requests_oauthlib import OAuth2Session
 from eve import Eve
@@ -50,14 +50,10 @@ def login():
 def callback():
     if 'error' in request.args:
         if request.args.get('error') == 'access_denied':
-            return json.dumps({
-                "error": "Access denied",
-            })
-        return json.dumps({
-            "error": "Other error",
-        })
+            return "Access denied"
+        return "Other error"
     if 'code' not in request.args and 'state' not in request.args:
-        return json.dumps({})
+        return "Not possible to login."
     else:
         google = get_google_auth(state=session['oauth_state'])
         try:
@@ -66,20 +62,16 @@ def callback():
                 client_secret=settings.OAUTH_CLIENT_SECRET,
                 authorization_response=request.url)
         except HTTPError:
-            return json.dumps({"error": "Failed to get google login."})
+            return "Failed to get google login."
         google = get_google_auth(token=token)
         resp = google.get(settings.OAUTH_USER_INFO)
         if resp.status_code == 200:
             user_data = resp.json()
             # email = user_data['email']
             print(user_data)
-            return json.dumps({
-                "status": "ok",
-                "user_data": user_data,
-            })
-        return json.dumps({
-            "error": "Failed to get user data",
-        })
+            # TODO: Save user data
+            return redirect("/")
+        return "Failed to get user data"
 
 if __name__ == '__main__':
     app.run()
