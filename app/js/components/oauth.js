@@ -23,7 +23,6 @@ export default class OAuth extends React.Component {
   }
 
   render() {
-    console.warn(this.state);
     if (this.state.auth_url) {
       return (
         <div className="login">
@@ -35,6 +34,7 @@ export default class OAuth extends React.Component {
     return (
       <div className="logout">
         Logged in as {this.state.name}.
+        <a href="/api/logout/">Logout</a>
       </div>
     )
   }
