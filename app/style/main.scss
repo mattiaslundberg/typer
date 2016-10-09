@@ -26,6 +26,18 @@ textarea {
   outline: 0;
 }
 
+.login, .logout {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.logout {
+  a {
+    margin-left: 4px;
+  }
+}
+
 .typer {
   font-size: 1.5em;
 
