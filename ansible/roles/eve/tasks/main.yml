@@ -8,9 +8,9 @@
   pip: executable=pip3 name=virtualenv state=latest
 
 - name: Create virtualenv for eve
-  command: virtualenv --no-site-packages --python python3 ~/venvs/eve
+  command: virtualenv --no-site-packages --python python3 /var/eved/{{ domain_name }}/venv/
   args:
-    creates: ~/venvs/eve
+    creates: /var/eved/{{ domain_name }}/venv/
 
 - name: Install Eve service
   template:
@@ -21,6 +21,15 @@
     - enable eve
     - restart eve
 
+- name: Install Eve service
+  template:
+    src: templates/eved.socket.j2
+    dest: /lib/systemd/system/eved.socket
+  notify:
+    - daemon reload
+    - enable eve socket
+    - restart eve socket
+
 - name: Deploy eve application
   copy:
     src: ../server/
@@ -29,6 +38,6 @@
     - restart eve
 
 - name: Install python requirements
-  command: /root/venvs/eve/bin/pip install -r /var/www/{{ domain_name }}/requirements.txt
+  command: /var/eved/{{ domain_name }}/venv/bin/pip install -r /var/www/{{ domain_name }}/requirements.txt
   notify:
     - restart eve

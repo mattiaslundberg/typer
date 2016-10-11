@@ -3,11 +3,13 @@
   command: systemctl daemon-reload
 
 - name: enable eve
-  service:
-    name: eved
-    enabled: yes
+  command: systemctl enable eved.service
+
+- name: enable eve socket
+  command: systemctl enable eved.socket
 
 - name: restart eve
-  service:
-    name: eved
-    state: restarted
+  command: systemctl restart eved.service
+
+- name: restart eve socket
+  command: systemctl restart eved.socket

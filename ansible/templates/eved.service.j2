@@ -1,6 +1,7 @@
 [Unit]
 Description=Eve server
 After=network.target remote-fs.target nss-lookup.target
+Requires=eved.socket
 
 [Service]
 Type=simple
@@ -9,7 +10,12 @@ Environment="OAUTH_CLIENT_ID={{ OAUTH_CLIENT_ID }}"
 Environment="OAUTH_CLIENT_SECRET={{ OAUTH_CLIENT_SECRET }}"
 Environment="OAUTH_REDIRECT_URI=https://{{ domain_name }}/api/oauth2callback"
 Restart=always
-ExecStart=/root/venvs/eve/bin/python /var/www/{{ domain_name }}/run.py
+WorkingDirectory=/var/www/{{ domain_name }}/
+ExecStart=/var/eved/{{ domain_name }}/venv/bin/gunicorn run
+PIDFile=/run/gunicorn/pid
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
