@@ -11,11 +11,9 @@ Environment="OAUTH_CLIENT_SECRET={{ OAUTH_CLIENT_SECRET }}"
 Environment="OAUTH_REDIRECT_URI=https://{{ domain_name }}/api/oauth2callback"
 Restart=always
 WorkingDirectory=/var/www/{{ domain_name }}/
-ExecStart=/var/eved/{{ domain_name }}/venv/bin/gunicorn run
-PIDFile=/run/gunicorn/pid
-ExecReload=/bin/kill -s HUP $MAINPID
-ExecStop=/bin/kill -s TERM $MAINPID
-PrivateTmp=true
+ExecStart=/var/eved/{{ domain_name }}/venv/bin/uwsgi --plugin python3
+--virtualenv /var/eved/{{ domain_name }}/venv/ -s /tmp/uwsgi.sock
+--manage-script-name --mount /api=run
 
 [Install]
 WantedBy=multi-user.target

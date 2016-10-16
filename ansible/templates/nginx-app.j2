@@ -30,11 +30,8 @@ server {
     index index.html index.htm;
 
     location /api/ {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto https;
-        proxy_set_header Host $http_host;
-        proxy_redirect off;
-        proxy_pass http://127.0.0.1:8000/;
+        include uwsgi_params;
+        uwsgi_pass unix:/tmp/yourapplication.sock;
     }
 
     location / {
