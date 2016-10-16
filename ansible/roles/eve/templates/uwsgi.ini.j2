@@ -1,9 +1,9 @@
 [uwsgi]
+base = /var/www/{{ domain_name }}/
 enable-threads = true
 virtualenv = /var/eved/{{ domain_name }}/venv/
 socket = /tmp/uwsgieved.sock
-wsgi-file = run.py
-callable = app
+module = run:app
 master = true
 processes = 4
 threads = 2
