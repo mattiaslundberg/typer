@@ -1,4 +1,5 @@
-enable-threads
+[uwsgi]
+enable-threads = true
 virtualenv = /var/eved/{{ domain_name }}/venv/
 socket = /tmp/uwsgieved.sock
 wsgi-file = run.py
