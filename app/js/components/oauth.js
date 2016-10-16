@@ -29,13 +29,15 @@ export default class OAuth extends React.Component {
           <a href={this.state.auth_url}>Login using Google</a>
         </div>
       )
+    } else if (this.state.name) {
+      return (
+        <div className="logout">
+          Logged in as {this.state.name}.
+          <a href="/api/logout/">Logout</a>
+        </div>
+      )
     }
 
-    return (
-      <div className="logout">
-        Logged in as {this.state.name}.
-        <a href="/api/logout/">Logout</a>
-      </div>
-    )
+    return null
   }
 }
