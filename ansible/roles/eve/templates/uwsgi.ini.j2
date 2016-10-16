@@ -1,6 +1,6 @@
 enable-threads
-virtualenv /var/eved/{{ domain_name }}/venv/
-socket /tmp/uwsgieved.sock
+virtualenv = /var/eved/{{ domain_name }}/venv/
+socket = /tmp/uwsgieved.sock
 wsgi-file = run.py
 callable = app
 master = true
