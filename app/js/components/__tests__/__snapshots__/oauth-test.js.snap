@@ -1,0 +1,22 @@
+exports[`OAuth Render logged in status when received 1`] = `
+<div
+  className="logout">
+  Logged in as 
+  Mattias
+  .
+  <a
+    href="/api/logout/">
+    Logout
+  </a>
+</div>
+`;
+
+exports[`OAuth Render login link when received 1`] = `
+<div
+  className="login">
+  <a
+    href="http://hello.com">
+    Login using Google
+  </a>
+</div>
+`;
