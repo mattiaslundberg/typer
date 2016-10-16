@@ -12,6 +12,13 @@
   args:
     creates: /var/eved/{{ domain_name }}/venv/
 
+- name: Install wsgi file
+  template:
+    src: templates/uwsgi.ini.j2
+    dest: /var/eved/uwsgi.ini
+  notify:
+    - restart eve
+
 - name: Install Eve service
   template:
     src: templates/eved.service.j2
@@ -20,15 +27,6 @@
     - daemon reload
     - enable eve
     - restart eve
-
-- name: Install Eve service
-  template:
-    src: templates/eved.socket.j2
-    dest: /lib/systemd/system/eved.socket
-  notify:
-    - daemon reload
-    - enable eve socket
-    - restart eve socket
 
 - name: Deploy eve application
   copy:

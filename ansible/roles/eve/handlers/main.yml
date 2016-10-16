@@ -5,11 +5,5 @@
 - name: enable eve
   command: systemctl enable eved.service
 
-- name: enable eve socket
-  command: systemctl enable eved.socket
-
 - name: restart eve
   command: systemctl restart eved.service
-
-- name: restart eve socket
-  command: systemctl restart eved.socket

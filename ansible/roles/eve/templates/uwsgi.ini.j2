@@ -1,0 +1,10 @@
+enable-threads
+virtualenv /var/eved/{{ domain_name }}/venv/
+socket /tmp/uwsgieved.sock
+wsgi-file = run.py
+callable = app
+master = true
+processes = 4
+threads = 2
+uid = www-data
+gid = nogroup

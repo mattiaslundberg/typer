@@ -1,7 +1,6 @@
 [Unit]
 Description=Eve server
 After=network.target remote-fs.target nss-lookup.target
-Requires=eved.socket
 
 [Service]
 Type=simple
@@ -11,9 +10,7 @@ Environment="OAUTH_CLIENT_SECRET={{ OAUTH_CLIENT_SECRET }}"
 Environment="OAUTH_REDIRECT_URI=https://{{ domain_name }}/api/oauth2callback"
 Restart=always
 WorkingDirectory=/var/www/{{ domain_name }}/
-ExecStart=/var/eved/{{ domain_name }}/venv/bin/uwsgi --plugin python3
---virtualenv /var/eved/{{ domain_name }}/venv/ -s /tmp/uwsgi.sock
---manage-script-name --mount /api=run
+ExecStart=/var/eved/{{ domain_name }}/venv/bin/uwsgi --ini /var/eved/uwsgi.ini
 
 [Install]
 WantedBy=multi-user.target
