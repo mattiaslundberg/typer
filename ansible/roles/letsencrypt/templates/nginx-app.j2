@@ -29,7 +29,8 @@ server {
     root /var/www/{{ domain_name }};
     index index.html index.htm;
 
-    location /api/ {
+    location /api {
+        rewrite /api(.*) $1 break;
         include uwsgi_params;
         uwsgi_pass unix:/tmp/uwsgieved.sock;
     }
