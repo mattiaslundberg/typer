@@ -1,25 +1,8 @@
 exports[`AppTest Renders TextSelector 1`] = `
 <div>
-  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
-      props));
-      /* istanbul ignore next */_this.state = {};
-  
-      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
-      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
-      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
-  
-    }
+  <OAuth
     authCallback={[Function]} />
-  <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
-  
-  
-      /* istanbul ignore next */_this.state = {
-        isUploading: false };
-  
-  
-      /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
-      /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
-    }
+  <TextSelector
     isAuthenticated={false}
     onSelect={[Function]}
     options={Array []} />
@@ -28,26 +11,9 @@ exports[`AppTest Renders TextSelector 1`] = `
 
 exports[`AppTest Renders TextSelector 2`] = `
 <div>
-  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
-      props));
-      /* istanbul ignore next */_this.state = {};
-  
-      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
-      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
-      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
-  
-    }
+  <OAuth
     authCallback={[Function]} />
-  <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
-  
-  
-      /* istanbul ignore next */_this.state = {
-        isUploading: false };
-  
-  
-      /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
-      /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
-    }
+  <TextSelector
     isAuthenticated={false}
     onSelect={[Function]}
     options={
@@ -63,26 +29,9 @@ exports[`AppTest Renders TextSelector 2`] = `
 
 exports[`AppTest Renders Typer after text is set 1`] = `
 <div>
-  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
-      props));
-      /* istanbul ignore next */_this.state = {};
-  
-      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
-      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
-      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
-  
-    }
+  <OAuth
     authCallback={[Function]} />
-  <function Typer(props) {/* istanbul ignore next */_classCallCheck(this, Typer);var _this = _possibleConstructorReturn(this, (Typer.__proto__ || Object.getPrototypeOf(Typer)).call(this,
-      props));
-  
-      /* istanbul ignore next */_this.state = {
-        typedSequence: "",
-        charsTyped: 0 };
-  
-  
-      /* istanbul ignore next */_this.onType = /* istanbul ignore next */_this.onType.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
-    }
+  <Typer
     fullText={
       Array [
         "H",
@@ -105,15 +54,7 @@ exports[`AppTest Renders Typer after text is set 1`] = `
 
 exports[`AppTest Renders error view 1`] = `
 <div>
-  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
-      props));
-      /* istanbul ignore next */_this.state = {};
-  
-      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
-      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
-      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
-  
-    }
+  <OAuth
     authCallback={[Function]} />
   <div
     className="error-message">
@@ -124,26 +65,9 @@ exports[`AppTest Renders error view 1`] = `
 
 exports[`AppTest Renders login link after getting the url 1`] = `
 <div>
-  <function OAuth(props) {/* istanbul ignore next */_classCallCheck(this, OAuth);var _this = _possibleConstructorReturn(this, (OAuth.__proto__ || Object.getPrototypeOf(OAuth)).call(this,
-      props));
-      /* istanbul ignore next */_this.state = {};
-  
-      /* istanbul ignore next */(0, _net.get)("/api/oauth/").then(
-      function (response) /* istanbul ignore next */{return (/* istanbul ignore next */_this.handleResponse(response));},
-      function (error) /* istanbul ignore next */{return (/* istanbul ignore next */_this.setState({ error: "Failed to get login url" }));}); /* istanbul ignore next */return _this;
-  
-    }
+  <OAuth
     authCallback={[Function]} />
-  <function TextSelector() {/* istanbul ignore next */_classCallCheck(this, TextSelector);var _this = _possibleConstructorReturn(this, (TextSelector.__proto__ || Object.getPrototypeOf(TextSelector)).call(this));
-  
-  
-      /* istanbul ignore next */_this.state = {
-        isUploading: false };
-  
-  
-      /* istanbul ignore next */_this.onAddClick = /* istanbul ignore next */_this.onAddClick.bind( /* istanbul ignore next */_this);
-      /* istanbul ignore next */_this.onNewCancel = /* istanbul ignore next */_this.onNewCancel.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
-    }
+  <TextSelector
     isAuthenticated={false}
     onSelect={[Function]}
     options={Array []} />
