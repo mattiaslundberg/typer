@@ -1,12 +1,23 @@
 import json
 import settings
-from flask import request, session, redirect
+from flask import request, session, redirect, Response, abort
 from requests import HTTPError
 from requests_oauthlib import OAuth2Session
 from eve import Eve
+from eve.auth import BasicAuth
 from flask_login import LoginManager, login_user, current_user, logout_user
 
-app = Eve()
+
+class FlaskLoginAuth(BasicAuth):
+    def authenticate(self):
+        resp = Response(None, 403)
+        abort(403, description='Please provide proper credentials', response=resp)
+
+    def authorized(self, allowed_roles, resource, method):
+        return current_user and current_user.is_authenticated
+
+
+app = Eve(auth=FlaskLoginAuth)
 
 login_manager = LoginManager(app)
 login_manager.login_view = "oauth"
