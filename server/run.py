@@ -11,7 +11,11 @@ from flask_login import LoginManager, login_user, current_user, logout_user
 class FlaskLoginAuth(BasicAuth):
     def authenticate(self):
         resp = Response(None, 403)
-        abort(403, description='Please provide proper credentials', response=resp)
+        abort(
+            403,
+            description='Please provide proper credentials',
+            response=resp
+        )
 
     def authorized(self, allowed_roles, resource, method):
         return current_user and current_user.is_authenticated
