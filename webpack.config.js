@@ -6,11 +6,11 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.scss$/,
         include: /app/,
-        loaders: [
+        use: [
           'style',
           'css',
           'postcss-loader',
@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        use: 'babel',
       },
     ],
   },

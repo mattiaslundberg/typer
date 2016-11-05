@@ -20,11 +20,11 @@ module.exports = {
     }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.scss$/,
         include: /app/,
-        loaders: [
+        use: [
           'style',
           'css',
           'postcss-loader',
@@ -35,7 +35,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
+        use: {
           presets: ['es2015', 'react', 'stage-0'],
         },
       },
