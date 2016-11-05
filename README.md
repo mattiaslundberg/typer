@@ -5,8 +5,8 @@ Practice your typing skills with an in-browser app.
 
 # Development
 
-1. Run `npm install`
-2. Run `npm start`
+1. Run `yarn install`
+2. Run `yarn start`
 3. Change directory to server
 4. Create python3 virtualenv
 5. Run `pip install -r requirements.txt`
