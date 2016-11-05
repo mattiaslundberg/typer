@@ -1,9 +1,12 @@
 ---
-- name: daemon reload
-  command: systemctl daemon-reload
-
 - name: enable eve
-  command: systemctl enable eved.service
+  systemd:
+    daemon_reload: yes
+    name: eved.service
+    enabled: yes
 
 - name: restart eve
-  command: systemctl restart eved.service
+  systemd:
+    daemon_reload: yes
+    name: eved.service
+    state: restarted

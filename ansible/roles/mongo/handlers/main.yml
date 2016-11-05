@@ -1,10 +1,12 @@
 ---
 - name: enable mongodb
-  service:
-    name: mongodb
+  systemd:
+    daemon_reload: yes
+    name: mongodb.service
     enabled: yes
 
 - name: restart mongodb
-  service:
-    name: mongodb
+  systemd:
+    daemon_reload: yes
+    name: mongodb.service
     state: restarted

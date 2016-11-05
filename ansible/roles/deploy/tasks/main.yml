@@ -5,14 +5,16 @@
     chdir: ..
   delegate_to: 127.0.0.1
   become: no
-  tags: [compile]
+  tags: [compile, deploy]
 
 - name: Deploy html
   copy:
-    src: ../../index.html
+    src: ../index.html
     dest: /var/www/{{ domain_name }}/
+  tags: [deploy]
 
 - name: Deploy js bundle
   copy:
-    src: ../../dist/bundle.js
+    src: ../dist/bundle.js
     dest: /var/www/{{ domain_name }}/
+  tags: [deploy]

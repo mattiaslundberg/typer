@@ -24,7 +24,6 @@
     src: templates/eved.service.j2
     dest: /lib/systemd/system/eved.service
   notify:
-    - daemon reload
     - enable eve
     - restart eve
 
