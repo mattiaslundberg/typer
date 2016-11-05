@@ -37,6 +37,15 @@ export default class Selection extends React.Component {
     })
   }
 
+  getAddButton() {
+    if (this.props.isAuthenticated) {
+      return (<p>
+        <button onClick={this.props.onAddClick}>Add new</button>
+      </p>)
+    }
+    return null
+  }
+
   render() {
     return (
       <div>
@@ -46,9 +55,7 @@ export default class Selection extends React.Component {
             {this.getOptions()}
           </select>
         </p>
-        <p>
-          <button onClick={this.props.onAddClick}>Add new</button>
-        </p>
+        {this.getAddButton()}
       </div>
     )
   }

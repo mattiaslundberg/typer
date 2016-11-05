@@ -10,8 +10,10 @@ export default class App extends React.Component {
     this.state = {
       text: null,
       options: [],
+      isAuthenticated: false,
     }
 
+    this.authCallback = this.authCallback.bind(this)
     this.onTextSelected = this.onTextSelected.bind(this)
     this.startNew = this.startNew.bind(this)
 
@@ -19,6 +21,10 @@ export default class App extends React.Component {
       response => this.setState({options: JSON.parse(response)._items}),
       error => this.setState({error: JSON.parse(error)._error})
     )
+  }
+
+  authCallback(authState) {
+    this.setState({isAuthenticated: !!authState.name})
   }
 
   startNew() {
@@ -37,7 +43,10 @@ export default class App extends React.Component {
     let modules = []
 
     modules.push(
-      <OAuth key="auth" />
+      <OAuth
+        key="auth"
+        authCallback={this.authCallback}
+      />
     )
 
     if (this.state.text) {
@@ -57,6 +66,7 @@ export default class App extends React.Component {
         key="textselector"
         onSelect={this.onTextSelected}
         options={this.state.options}
+        isAuthenticated={this.state.isAuthenticated}
       />)
     }
 

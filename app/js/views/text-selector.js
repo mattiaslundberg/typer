@@ -32,6 +32,7 @@ export default class TextSelector extends React.Component {
       onAddClick={this.onAddClick}
       onSelect={this.props.onSelect}
       options={this.props.options}
+      isAuthenticated={this.props.isAuthenticated}
     />
   }
 }

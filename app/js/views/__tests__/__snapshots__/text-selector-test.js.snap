@@ -5,6 +5,7 @@ exports[`TextSelectorTest Render selectable items 1`] = `
     /* istanbul ignore next */_this.onChange = /* istanbul ignore next */_this.onChange.bind( /* istanbul ignore next */_this);
     /* istanbul ignore next */_this.prepareText = /* istanbul ignore next */_this.prepareText.bind( /* istanbul ignore next */_this); /* istanbul ignore next */return _this;
   }
+  isAuthenticated={undefined}
   onAddClick={[Function]}
   onSelect={[Function]}
   options={

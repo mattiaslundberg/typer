@@ -14,12 +14,17 @@ export default class OAuth extends React.Component {
 
   handleResponse(response) {
     const data = JSON.parse(response)
-
-    this.setState({
+    const newState = {
       auth_url: data.auth_url,
       name: data.name,
       email: data.email,
-    })
+    }
+
+    this.setState(newState)
+
+    if (this.props.authCallback) {
+      this.props.authCallback(newState)
+    }
   }
 
   render() {
