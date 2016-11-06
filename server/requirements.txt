@@ -10,7 +10,6 @@ Flask==0.10.1
 Flask-Login==0.4.0
 Flask-PyMongo==0.4.1
 greenlet==0.4.10
-gunicorn==19.6.0
 itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
@@ -21,6 +20,7 @@ pathtools==0.1.2
 py==1.4.31
 pymongo==3.3.1
 pytest==3.0.3
+pytest-env==0.6.0
 pytest-testmon==0.8.3
 pytest-watch==4.1.0
 PyYAML==3.12
