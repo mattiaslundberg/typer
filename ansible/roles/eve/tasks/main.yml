@@ -33,8 +33,10 @@
     dest: /var/www/{{ domain_name }}/
   notify:
     - restart eve
+  tags: [deploy]
 
 - name: Install python requirements
   command: /var/eved/{{ domain_name }}/venv/bin/pip install -r /var/www/{{ domain_name }}/requirements.txt
   notify:
     - restart eve
+  tags: [deploy]

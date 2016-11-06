@@ -12,9 +12,11 @@
     src: ../index.html
     dest: /var/www/{{ domain_name }}/
   tags: [deploy]
+  notify: reload nginx
 
 - name: Deploy js bundle
   copy:
     src: ../dist/bundle.js
     dest: /var/www/{{ domain_name }}/
   tags: [deploy]
+  notify: reload nginx
