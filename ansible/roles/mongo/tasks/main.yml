@@ -4,3 +4,15 @@
   notify:
     - restart mongodb
     - enable mongodb
+
+- name: Create MongoDB systemd config directory
+  file:
+    path: /etc/systemd/system/mongodb.service.d/
+    state: directory
+
+- name: Always restart failing MongoDB
+  template:
+    src: templates/restart.conf.j2
+    dest: /etc/systemd/system/mongodb.service.d/restart.conf
+  notify:
+    - restart mongodb
