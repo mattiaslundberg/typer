@@ -6,9 +6,21 @@
   pre_tasks:
     - raw: apt-get install -y python-simplejson
 
+  vars:
+    datadog_checks:
+      process:
+        init_config:
+        instances:
+          - name: ssh
+            search_string: ['ssh', 'sshd' ]
+      nginx:
+        init_config:
+        nginx_status_url: "https://{{ domain_name }}/"
+
   roles:
     - letsencrypt
     - eve
     - mongo
     - deploy
     - upgraded
+    - { role: Datadog.datadog, datadog_api_key: "{{ datadog_api_key }}" }

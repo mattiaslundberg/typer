@@ -6,6 +6,7 @@ from requests_oauthlib import OAuth2Session
 from eve import Eve
 from eve.auth import BasicAuth
 from flask_login import LoginManager, login_user, current_user, logout_user
+from datadog import statsd
 
 
 class FlaskLoginAuth(BasicAuth):
@@ -83,6 +84,7 @@ def logout():
 
 @app.route('/oauth')
 def oauth():
+    statsd.increment("oauth.load")
     if current_user and current_user.is_authenticated:
         return json.dumps(current_user.client_data)
     google = get_google_auth()
@@ -98,7 +100,9 @@ def oauth():
 
 @app.route('/oauth2callback')
 def callback():
+    statsd.increment("oauth.callback")
     if 'error' in request.args:
+        statsd.increment("oauth.callback.error")
         if request.args.get('error') == 'access_denied':
             return "Access denied"
         return "Other error"
