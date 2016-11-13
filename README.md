@@ -17,11 +17,11 @@ Practice your typing skills with an in-browser app.
 # Production deployment
 
 1. Setup an Ubuntu 16.04 server with SSH access.
-2. Install [`ansible`](https://www.ansible.com/)
-3. Add the following to `/etc/ansible/hosts`
+2. Install [`ansible`](https://www.ansible.com/) version 2.2 or later.
+3. Change `ansible/inventory.cfg` to contain the host you wish to use.
 ```
 [typer]
-example.com ansible_user=root letsencrypt_email=me@mlundbergse domain_name=example.com
+example.com
 ```
 4. Create `ansible/custom.yml` vault containing all required variables. and `~/.vault_pass.txt` containing the vauld password.
 5. Run `ansible-playbook -e @ansible/custom.yml --vault-password-file ~/.vault_pass.txt ansible/playbook.yml` to install everything needed on the server
