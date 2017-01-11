@@ -1,12 +1,9 @@
 ---
 - hosts: typer
   become: true
-  gather_facts: no
-
-  pre_tasks:
-    - raw: apt-get install -y python-simplejson
 
   vars:
+    ansible_python_interpreter: "/usr/bin/python3"
     datadog_checks:
       process:
         init_config:
