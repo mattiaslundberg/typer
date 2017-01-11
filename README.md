@@ -24,7 +24,7 @@ Practice your typing skills with an in-browser app.
 example.com
 ```
 4. Create `ansible/custom.yml` vault containing all required variables. and `~/.vault_pass.txt` containing the vauld password.
-5. Run `ansible-playbook -e @ansible/custom.yml --vault-password-file ~/.vault_pass.txt ansible/playbook.yml` to install everything needed on the server
+5. Run `ansible-playbook -e @ansible/custom.yml ansible/playbook.yml` to install everything needed on the server
 6. Start typing on real server.
 
 # Attributions
