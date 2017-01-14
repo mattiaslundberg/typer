@@ -6,7 +6,8 @@
     ansible_python_interpreter: "/usr/bin/python3"
 
   roles:
-    - letsencrypt
+    - role: letsencrypt
+      extra_location_blocks: "location /api { rewrite /api(.*) $1 break; include uwsgi_params; uwsgi_pass unix:/tmp/uwsgieved.sock; }"
     - eve
     - mongo
     - deploy
