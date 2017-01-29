@@ -1,7 +1,7 @@
 [uwsgi]
-base = /var/www/{{ domain_name }}/
+base = /var/www/{{ letsencrypt_domain_name }}/
 enable-threads = true
-virtualenv = /var/eved/{{ domain_name }}/venv/
+virtualenv = /var/eved/{{ letsencrypt_domain_name }}/venv/
 socket = /tmp/uwsgieved.sock
 module = run:app
 master = true

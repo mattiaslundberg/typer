@@ -8,9 +8,9 @@
   pip: executable=pip3 name=virtualenv state=latest
 
 - name: Create virtualenv for eve
-  command: virtualenv --no-site-packages --python python3 /var/eved/{{ domain_name }}/venv/
+  command: virtualenv --no-site-packages --python python3 /var/eved/{{ letsencrypt_domain_name }}/venv/
   args:
-    creates: /var/eved/{{ domain_name }}/venv/
+    creates: /var/eved/{{ letsencrypt_domain_name }}/venv/
 
 - name: Install wsgi file
   template:
@@ -30,13 +30,13 @@
 - name: Deploy eve application
   copy:
     src: ../server/
-    dest: /var/www/{{ domain_name }}/
+    dest: /var/www/{{ letsencrypt_domain_name }}/
   notify:
     - restart eve
   tags: [deploy]
 
 - name: Install python requirements
-  command: /var/eved/{{ domain_name }}/venv/bin/pip install -r /var/www/{{ domain_name }}/requirements.txt
+  command: /var/eved/{{ letsencrypt_domain_name }}/venv/bin/pip install -r /var/www/{{ letsencrypt_domain_name }}/requirements.txt
   notify:
     - restart eve
   tags: [deploy]

@@ -7,10 +7,10 @@ Type=simple
 Environment="APP_SECRET_KEY={{ APP_SECRET_KEY }}"
 Environment="OAUTH_CLIENT_ID={{ OAUTH_CLIENT_ID }}"
 Environment="OAUTH_CLIENT_SECRET={{ OAUTH_CLIENT_SECRET }}"
-Environment="OAUTH_REDIRECT_URI=https://{{ domain_name }}/api/oauth2callback"
+Environment="OAUTH_REDIRECT_URI=https://{{ letsencrypt_domain_name }}/api/oauth2callback"
 Restart=always
-WorkingDirectory=/var/www/{{ domain_name }}/
-ExecStart=/var/eved/{{ domain_name }}/venv/bin/uwsgi --ini /var/eved/uwsgi.ini
+WorkingDirectory=/var/www/{{ letsencrypt_domain_name }}/
+ExecStart=/var/eved/{{ letsencrypt_domain_name }}/venv/bin/uwsgi --ini /var/eved/uwsgi.ini
 
 [Install]
 WantedBy=multi-user.target
